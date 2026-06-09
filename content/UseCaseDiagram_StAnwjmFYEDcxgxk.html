@@ -1,0 +1,1281 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Use Case Diagram - DATASTOCK</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		DATASTOCK	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Use Case Diagram - DATASTOCK		</span>
+<a onclick="javascript: showVpLink('DATASTOCK.vpp://diagram/StAnwjmFYEDcxgxk', 'DATASTOCK\nDATASTOCK.vpp://diagram/StAnwjmFYEDcxgxk', 'DATASTOCK', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),hideLinkPopup(),hideReferencedBys();">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin('diagram', this.value);hideLinkPopup();showSpotLight('diagram', this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|347.0|2.0|1310.0|1606.0|System__GonwjmFYEDcxgxz.html|System__GonwjmFYEDcxgxz.html|fGonwjmFYEDcxgxy" id="optionfGonwjmFYEDcxgxy">DATASTOCK : System</option>
+<option value="shape|117.0|612.0|52.0|60.0|Actor_saUnwjmFYEDcxgx5.html|Actor_saUnwjmFYEDcxgx5.html|saUnwjmFYEDcxgx4" id="optionsaUnwjmFYEDcxgx4">ADMIN INVENTARIO : Actor</option>
+<option value="shape|1729.0|462.0|30.0|60.0|Actor_svUnwjmFYEDcxgyF.html|Actor_svUnwjmFYEDcxgyF.html|svUnwjmFYEDcxgyE" id="optionsvUnwjmFYEDcxgyE">EMPLEADO : Actor</option>
+<option value="shape|139.0|282.0|30.0|60.0|Actor_eIDvwjmFYEDcxg6B.html|Actor_eIDvwjmFYEDcxg6B.html|eIDvwjmFYEDcxg6A" id="optioneIDvwjmFYEDcxg6A">EMPRESARIO : Actor</option>
+<option value="shape|926.0|112.0|152.0|71.0|UseCase_2gcnwjmFYEDcxgyX.html|UseCase_2gcnwjmFYEDcxgyX.html|2gcnwjmFYEDcxgyW" id="option2gcnwjmFYEDcxgyW">LOG IN : Use Case</option>
+<option value="shape|453.0|52.0|140.0|85.0|UseCase_V2SnwjmFYEDcxgym.html|UseCase_V2SnwjmFYEDcxgym.html|V2SnwjmFYEDcxgyl" id="optionV2SnwjmFYEDcxgyl">RECIBIR NOTIFICACIONES INGRESO : Use Case</option>
+<option value="shape|378.0|357.0|207.0|111.0|UseCase_8O6nwjmFYEDcxgy3.html|UseCase_8O6nwjmFYEDcxgy3.html|8O6nwjmFYEDcxgy2" id="option8O6nwjmFYEDcxgy2">CREAR USUARIOS : Use Case</option>
+<option value="shape|685.0|861.0|183.0|84.0|UseCase_nE_nwjmFYEDcxgzP.html|UseCase_nE_nwjmFYEDcxgzP.html|nE.nwjmFYEDcxgzO" id="optionnE.nwjmFYEDcxgzO">CREAR MARCA, CATEGORIA Y PRESENTACION : Use Case</option>
+<option value="shape|648.0|987.0|155.0|85.0|UseCase_oaJXwjmFYEDcxg0b.html|UseCase_oaJXwjmFYEDcxg0b.html|oaJXwjmFYEDcxg0a" id="optionoaJXwjmFYEDcxg0a">CREAR LOTES - PRODUCTOS : Use Case</option>
+<option value="shape|1076.0|240.0|110.0|71.0|UseCase_oTbXwjmFYEDcxg1M.html|UseCase_oTbXwjmFYEDcxg1M.html|oTbXwjmFYEDcxg1L" id="optionoTbXwjmFYEDcxg1L">VALIDAR ROLES : Use Case</option>
+<option value="shape|898.0|302.0|137.0|75.0|UseCase_lTXXwjmFYEDcxg16.html|UseCase_lTXXwjmFYEDcxg16.html|lTXXwjmFYEDcxg15" id="optionlTXXwjmFYEDcxg15">VALIDAR CONTRASEÑA : Use Case</option>
+<option value="shape|1076.0|1230.0|185.0|158.0|UseCase_aD4fwjmFYEDcxg7e.html|UseCase_aD4fwjmFYEDcxg7e.html|aD4fwjmFYEDcxg7d" id="optionaD4fwjmFYEDcxg7d">SISTEMA                                                                                                 MOSTRAR ESTADÍSTICAS : Use Case</option>
+<option value="shape|1243.0|965.0|188.0|177.0|UseCase_mcTfwjmFYEDcxg76.html|UseCase_mcTfwjmFYEDcxg76.html|mcTfwjmFYEDcxg75" id="optionmcTfwjmFYEDcxg75">SISTEMA                                                                     NOTIFICAR CADUCIDAD PRODUCTOS : Use Case</option>
+<option value="shape|416.0|182.0|130.0|107.0|UseCase_h_MgIjmFYEDcxg9k.html|UseCase_h_MgIjmFYEDcxg9k.html|h.MgIjmFYEDcxg9j" id="optionh.MgIjmFYEDcxg9j">ASIGNAR ROLES : Use Case</option>
+<option value="shape|954.0|1518.0|91.0|68.0|UseCase_1aJ6IjmFYEDcxhCe.html|UseCase_1aJ6IjmFYEDcxhCe.html|1aJ6IjmFYEDcxhCd" id="option1aJ6IjmFYEDcxhCd">LOG OUT : Use Case</option>
+<option value="shape|926.0|656.0|150.0|144.0|UseCase_59QOIjmFYEDcxhVV.html|UseCase_59QOIjmFYEDcxhVV.html|59QOIjmFYEDcxhVU" id="option59QOIjmFYEDcxhVU">CONSULTAR INVENTARIO : Use Case</option>
+<option value="shape|610.0|518.0|123.0|85.0|UseCase_x3ngkjmFYEDKyAjQ.html|UseCase_x3ngkjmFYEDKyAjQ.html|x3ngkjmFYEDKyAjP" id="optionx3ngkjmFYEDKyAjP">MODIFICAR DATOS PERSONALES : Use Case</option>
+<option value="shape|636.0|254.0|130.0|103.0|UseCase_Y5mYkjmFYEDKyAr9.html|UseCase_Y5mYkjmFYEDKyAr9.html|Y5mYkjmFYEDKyAr8" id="optionY5mYkjmFYEDKyAr8">MODIFICAR ROLES : Use Case</option>
+<option value="shape|617.0|1142.0|148.0|106.0|UseCase_AjAFkjmFYEDKyBEz.html|UseCase_AjAFkjmFYEDKyBEz.html|AjAFkjmFYEDKyBEy" id="optionAjAFkjmFYEDKyBEy">CONSULTAR EVIDENCIAS DE INGRESOS Y SALIDAS : Use Case</option>
+<option value="shape|399.0|887.0|165.0|100.0|UseCase_K3sFkjmFYEDKyBFd.html|UseCase_K3sFkjmFYEDKyBFd.html|K3sFkjmFYEDKyBFc" id="optionK3sFkjmFYEDKyBFc">INGRESOS DE PRODUCTOS : Use Case</option>
+<option value="shape|1240.0|302.0|147.0|90.0|UseCase_rTLacjmFYEDM_Qv6.html|UseCase_rTLacjmFYEDM_Qv6.html|rTLacjmFYEDM_Qv5" id="optionrTLacjmFYEDM_Qv5">CAMBIAR CONTRASEÑA : Use Case</option>
+<option value="shape|398.0|519.0|135.0|90.0|UseCase_DwzjcjmFYEDM_Q_r.html|UseCase_DwzjcjmFYEDM_Q_r.html|DwzjcjmFYEDM_Q_q" id="optionDwzjcjmFYEDM_Q_q">CONSULTAR HISTORIAL : Use Case</option>
+<option value="shape|1468.0|452.0|155.0|82.0|UseCase_AoRcDTmFYEDcUQ3V.html|UseCase_AoRcDTmFYEDcUQ3V.html|AoRcDTmFYEDcUQ3U" id="optionAoRcDTmFYEDcUQ3U">CREAR REMISION : Use Case</option>
+<option value="shape|1348.0|592.0|157.0|80.0|UseCase_QyxcDTmFYEDcUQ3n.html|UseCase_QyxcDTmFYEDcUQ3n.html|QyxcDTmFYEDcUQ3m" id="optionQyxcDTmFYEDcUQ3m">CONSULTAR HISTORIAL DE REMISIONES : Use Case</option>
+<option value="shape|405.0|1032.0|158.0|88.0|UseCase_pRNjmzmFYEDKAhCl.html|UseCase_pRNjmzmFYEDKAhCl.html|pRNjmzmFYEDKAhCk" id="optionpRNjmzmFYEDKAhCk">DESCRIPCION DE INGRESO : Use Case</option>
+<option value="shape|462.0|746.0|162.0|97.0|UseCase_VVLrmzmFYEDKAhEF.html|UseCase_VVLrmzmFYEDKAhEF.html|VVLrmzmFYEDKAhEE" id="optionVVLrmzmFYEDKAhEE">CARGAR RESPALDO DE ENTRADA : Use Case</option>
+<option value="shape|404.0|1338.0|144.0|90.0|UseCase_CNEsHzmFYEDOLw6O.html|UseCase_CNEsHzmFYEDOLw6O.html|CNEsHzmFYEDOLw6N" id="optionCNEsHzmFYEDOLw6N">SALIDA DE PRODUCTOS : Use Case</option>
+<option value="shape|629.0|1354.0|138.0|98.0|UseCase_sggXfzmGAqAoiBul.html|UseCase_sggXfzmGAqAoiBul.html|sggXfzmGAqAoiBuk" id="optionsggXfzmGAqAoiBuk">CARGAR Y PROCESAR RESPALDO DE SALIDA0 : Use Case</option>
+<option value="shape|522.0|1452.0|125.0|71.0|UseCase_dHKXfzmGAqAoiBvZ.html|UseCase_dHKXfzmGAqAoiBvZ.html|dHKXfzmGAqAoiBvY" id="optiondHKXfzmGAqAoiBvY">DESCRIPCION DE SALIDA : Use Case</option>
+<option value="shape|469.0|1218.0|111.0|93.0|UseCase_GfSSEbmGAqAoiBw6.html|UseCase_GfSSEbmGAqAoiBw6.html|6fSSEbmGAqAoiBw5" id="option6fSSEbmGAqAoiBw5">SUBIR Y DESCARGAR EVIDENCIA : Use Case</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/DATASTOCK.png" usemap="#diagram_map" class="Image" width="1803" height="1612"/>
+					<map name="diagram_map">
+<area imageId="diagram" coords="1026.7587, 183.0, 1076.0, 254.4, 1076.0, 240.0, 1082.5862, 240.0, 1043.2759, 183.0" coords2="1026.7587, 183.0, 1076.0, 254.4, 1076.0, 240.0, 1082.5862, 240.0, 1043.2759, 183.0" shape="poly" alt=":Include" id="areadiagram_map_.zbXwjmFYEDcxg1c_default" href="Include_UzbXwjmFYEDcxg1a.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="962.0, 183.0, 962.0, 302.0, 976.0, 302.0, 976.0, 183.0" coords2="962.0, 183.0, 962.0, 302.0, 976.0, 302.0, 976.0, 183.0" shape="poly" alt=":Include" id="areadiagram_map_VzXXwjmFYEDcxg2J_default" href="Include__zXXwjmFYEDcxg2I.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="207.0, 353.0, 207.0, 367.0, 378.0, 367.0, 378.0, 357.0, 457.0, 357.0, 457.0, 353.0" coords2="207.0, 353.0, 207.0, 367.0, 378.0, 367.0, 378.0, 357.0, 457.0, 357.0, 457.0, 353.0" shape="poly" alt=":Association" id="areadiagram_map_XkMsIjmFYEDcxg_A_default" href="Association_TkMsIjmFYEDcxg_7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1737.0, 533.0, 1737.0, 720.0, 1076.0, 720.0, 1076.0, 734.0, 1737.0, 734.0, 1737.0, 737.0, 1751.0, 737.0, 1751.0, 734.0, 1754.0, 734.0, 1754.0, 720.0, 1751.0, 720.0, 1751.0, 533.0" coords2="1737.0, 533.0, 1737.0, 720.0, 1076.0, 720.0, 1076.0, 734.0, 1737.0, 734.0, 1737.0, 737.0, 1751.0, 737.0, 1751.0, 734.0, 1754.0, 734.0, 1754.0, 720.0, 1751.0, 720.0, 1751.0, 533.0" shape="poly" alt=":Association" id="areadiagram_map_AesOIjmFYEDcxhV8_default" href="Association_busOIjmFYEDcxhV3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1710.0, 533.0, 1710.0, 1544.0, 1045.0, 1544.0, 1045.0, 1558.0, 1710.0, 1558.0, 1710.0, 1561.0, 1724.0, 1561.0, 1724.0, 1558.0, 1727.0, 1558.0, 1727.0, 1544.0, 1724.0, 1544.0, 1724.0, 533.0" coords2="1710.0, 533.0, 1710.0, 1544.0, 1045.0, 1544.0, 1045.0, 1558.0, 1710.0, 1558.0, 1710.0, 1561.0, 1724.0, 1561.0, 1724.0, 1558.0, 1727.0, 1558.0, 1727.0, 1544.0, 1724.0, 1544.0, 1724.0, 533.0" shape="poly" alt=":Association" id="areadiagram_map_uitOIjmFYEDcxhX8_default" href="Association_qitOIjmFYEDcxhX3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="120.0, 683.0, 120.0, 1560.0, 117.0, 1560.0, 117.0, 1574.0, 120.0, 1574.0, 120.0, 1577.0, 134.0, 1577.0, 134.0, 1574.0, 954.0, 1574.0, 954.0, 1560.0, 134.0, 1560.0, 134.0, 683.0" coords2="120.0, 683.0, 120.0, 1560.0, 117.0, 1560.0, 117.0, 1574.0, 120.0, 1574.0, 120.0, 1577.0, 134.0, 1577.0, 134.0, 1574.0, 954.0, 1574.0, 954.0, 1560.0, 134.0, 1560.0, 134.0, 683.0" shape="poly" alt=":Association" id="areadiagram_map_N9dOIjmFYEDcxhYG_default" href="Association_x9dOIjmFYEDcxhYB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="146.0, 353.0, 146.0, 1544.0, 143.0, 1544.0, 143.0, 1558.0, 146.0, 1558.0, 146.0, 1561.0, 160.0, 1561.0, 160.0, 1558.0, 954.0, 1558.0, 954.0, 1544.0, 160.0, 1544.0, 160.0, 353.0" coords2="146.0, 353.0, 146.0, 1544.0, 143.0, 1544.0, 143.0, 1558.0, 146.0, 1558.0, 146.0, 1561.0, 160.0, 1561.0, 160.0, 1558.0, 954.0, 1558.0, 954.0, 1544.0, 160.0, 1544.0, 160.0, 353.0" shape="poly" alt=":Association" id="areadiagram_map_MRrOIjmFYEDcxhYQ_default" href="Association_wRrOIjmFYEDcxhYL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1742.0, 132.0, 1742.0, 135.0, 1078.0, 135.0, 1078.0, 149.0, 1742.0, 149.0, 1742.0, 462.0, 1756.0, 462.0, 1756.0, 149.0, 1759.0, 149.0, 1759.0, 135.0, 1756.0, 135.0, 1756.0, 132.0" coords2="1742.0, 132.0, 1742.0, 135.0, 1078.0, 135.0, 1078.0, 149.0, 1742.0, 149.0, 1742.0, 462.0, 1756.0, 462.0, 1756.0, 149.0, 1759.0, 149.0, 1759.0, 135.0, 1756.0, 135.0, 1756.0, 132.0" shape="poly" alt=":Association" id="areadiagram_map_dTiuIjmFYEDcxhZu_default" href="Association_RTiuIjmFYEDcxhZp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="121.0, 132.0, 121.0, 135.0, 118.0, 135.0, 118.0, 149.0, 121.0, 149.0, 121.0, 612.0, 135.0, 612.0, 135.0, 149.0, 926.0, 149.0, 926.0, 135.0, 135.0, 135.0, 135.0, 132.0" coords2="121.0, 132.0, 121.0, 135.0, 118.0, 135.0, 118.0, 149.0, 121.0, 149.0, 121.0, 612.0, 135.0, 612.0, 135.0, 149.0, 926.0, 149.0, 926.0, 135.0, 135.0, 135.0, 135.0, 132.0" shape="poly" alt=":Association" id="areadiagram_map_MfRuIjmFYEDcxhaO_default" href="Association_QfRuIjmFYEDcxhaJ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="141.0, 192.0, 141.0, 195.0, 138.0, 195.0, 138.0, 209.0, 141.0, 209.0, 141.0, 282.0, 155.0, 282.0, 155.0, 209.0, 416.0, 209.0, 416.0, 195.0, 155.0, 195.0, 155.0, 192.0" coords2="141.0, 192.0, 141.0, 195.0, 138.0, 195.0, 138.0, 209.0, 141.0, 209.0, 141.0, 282.0, 155.0, 282.0, 155.0, 209.0, 416.0, 209.0, 416.0, 195.0, 155.0, 195.0, 155.0, 192.0" shape="poly" alt=":Association" id="areadiagram_map_1mAeIjmFYEDcxha9_default" href="Association_WmAeIjmFYEDcxha4.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="131.0, 142.0, 131.0, 145.0, 128.0, 145.0, 128.0, 159.0, 131.0, 159.0, 131.0, 350.0, 145.0, 350.0, 145.0, 342.0, 139.0, 342.0, 139.0, 282.0, 145.0, 282.0, 145.0, 159.0, 926.0, 159.0, 926.0, 145.0, 145.0, 145.0, 145.0, 142.0" coords2="131.0, 142.0, 131.0, 145.0, 128.0, 145.0, 128.0, 159.0, 131.0, 159.0, 131.0, 350.0, 145.0, 350.0, 145.0, 342.0, 139.0, 342.0, 139.0, 282.0, 145.0, 282.0, 145.0, 159.0, 926.0, 159.0, 926.0, 145.0, 145.0, 145.0, 145.0, 142.0" shape="poly" alt=":Association" id="areadiagram_map_skXwkjmFYEDKyAm7_default" href="Association_zEXwkjmFYEDKyAm2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="169.0, 296.0, 169.0, 310.0, 636.0, 310.0, 636.0, 296.0" coords2="169.0, 296.0, 169.0, 310.0, 636.0, 310.0, 636.0, 296.0" shape="poly" alt=":Association" id="areadiagram_map_k94UkjmFYEDKyAwu_default" href="Association_k94UkjmFYEDKyAwp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="473.0, 289.0, 473.0, 357.0, 487.0, 357.0, 487.0, 289.0" coords2="473.0, 289.0, 473.0, 357.0, 487.0, 357.0, 487.0, 289.0" shape="poly" alt=":Extend" id="areadiagram_map_SjSUkjmFYEDKyAxK_default" href="Extend_UjSUkjmFYEDKyAxI.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="160.0, 67.0, 160.0, 70.0, 157.0, 70.0, 157.0, 84.0, 160.0, 84.0, 160.0, 282.0, 169.0, 282.0, 169.0, 292.0, 174.0, 292.0, 174.0, 84.0, 453.0, 84.0, 453.0, 70.0, 174.0, 70.0, 174.0, 67.0" coords2="160.0, 67.0, 160.0, 70.0, 157.0, 70.0, 157.0, 84.0, 160.0, 84.0, 160.0, 282.0, 169.0, 282.0, 169.0, 292.0, 174.0, 292.0, 174.0, 84.0, 453.0, 84.0, 453.0, 70.0, 174.0, 70.0, 174.0, 67.0" shape="poly" alt=":Association" id="areadiagram_map_o1_UkjmFYEDKyAx1_default" href="Association_g1_UkjmFYEDKyAxw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="221.0, 352.0, 207.0, 356.0, 249.03726, 500.0, 249.0, 500.0, 249.0, 514.0, 253.12422, 514.0, 254.0, 517.0, 268.0, 514.0, 662.0, 514.0, 662.0, 518.0, 676.0, 518.0, 676.0, 514.0, 679.0, 514.0, 679.0, 500.0, 676.0, 500.0, 676.0, 497.0, 662.0, 497.0, 662.0, 500.0, 263.93826, 500.0, 221.0, 352.0" coords2="221.0, 352.0, 207.0, 356.0, 249.03726, 500.0, 249.0, 500.0, 249.0, 514.0, 253.12422, 514.0, 254.0, 517.0, 268.0, 514.0, 662.0, 514.0, 662.0, 518.0, 676.0, 518.0, 676.0, 514.0, 679.0, 514.0, 679.0, 500.0, 676.0, 500.0, 676.0, 497.0, 662.0, 497.0, 662.0, 500.0, 263.93826, 500.0, 221.0, 352.0" shape="poly" alt=":Association" id="areadiagram_map_fAd8kjmFYEDKyA2y_default" href="Association_NAd8kjmFYEDKyA2t.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="231.0, 680.0, 220.0, 689.0, 399.0, 896.16754, 399.0, 887.0, 409.85526, 887.0, 231.0, 680.0" coords2="231.0, 680.0, 220.0, 689.0, 399.0, 896.16754, 399.0, 887.0, 409.85526, 887.0, 231.0, 680.0" shape="poly" alt=":Association" id="areadiagram_map_2RAlkjmFYEDKyBHI_default" href="Association_8RAlkjmFYEDKyBHD.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="121.0, 683.0, 121.0, 731.0, 118.0, 731.0, 118.0, 745.0, 121.0, 745.0, 121.0, 748.0, 135.0, 748.0, 135.0, 745.0, 926.0, 745.0, 926.0, 731.0, 135.0, 731.0, 135.0, 683.0" coords2="121.0, 683.0, 121.0, 731.0, 118.0, 731.0, 118.0, 745.0, 121.0, 745.0, 121.0, 748.0, 135.0, 748.0, 135.0, 745.0, 926.0, 745.0, 926.0, 731.0, 135.0, 731.0, 135.0, 683.0" shape="poly" alt=":Association" id="areadiagram_map_wt.lkjmFYEDKyBI7_default" href="Association_bN_lkjmFYEDKyBI2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1732.0, 308.0, 1732.0, 311.0, 1387.0, 311.0, 1387.0, 325.0, 1732.0, 325.0, 1732.0, 462.0, 1746.0, 462.0, 1746.0, 325.0, 1749.0, 325.0, 1749.0, 311.0, 1746.0, 311.0, 1746.0, 308.0" coords2="1732.0, 308.0, 1732.0, 311.0, 1387.0, 311.0, 1387.0, 325.0, 1732.0, 325.0, 1732.0, 462.0, 1746.0, 462.0, 1746.0, 325.0, 1749.0, 325.0, 1749.0, 311.0, 1746.0, 311.0, 1746.0, 308.0" shape="poly" alt=":Association" id="areadiagram_map_geZtcjmFYEDM_Q.N_default" href="Association_HuZtcjmFYEDM_Q_I.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="183.0, 353.0, 183.0, 566.0, 180.0, 566.0, 180.0, 580.0, 183.0, 580.0, 183.0, 583.0, 197.0, 583.0, 197.0, 580.0, 398.0, 580.0, 398.0, 566.0, 197.0, 566.0, 197.0, 353.0" coords2="183.0, 353.0, 183.0, 566.0, 180.0, 566.0, 180.0, 580.0, 183.0, 580.0, 183.0, 583.0, 197.0, 583.0, 197.0, 580.0, 398.0, 580.0, 398.0, 566.0, 197.0, 566.0, 197.0, 353.0" shape="poly" alt=":Association" id="areadiagram_map_x4eLcjmFYEDM_RBM_default" href="Association_G4eLcjmFYEDM_RBH.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="75.0, 311.0, 75.0, 314.0, 72.0, 314.0, 72.0, 328.0, 75.0, 328.0, 75.0, 908.0, 72.0, 908.0, 72.0, 922.0, 75.0, 922.0, 75.0, 925.0, 89.0, 925.0, 89.0, 922.0, 399.0, 922.0, 399.0, 908.0, 89.0, 908.0, 89.0, 328.0, 139.0, 328.0, 139.0, 314.0, 89.0, 314.0, 89.0, 311.0" coords2="75.0, 311.0, 75.0, 314.0, 72.0, 314.0, 72.0, 328.0, 75.0, 328.0, 75.0, 908.0, 72.0, 908.0, 72.0, 922.0, 75.0, 922.0, 75.0, 925.0, 89.0, 925.0, 89.0, 922.0, 399.0, 922.0, 399.0, 908.0, 89.0, 908.0, 89.0, 328.0, 139.0, 328.0, 139.0, 314.0, 89.0, 314.0, 89.0, 311.0" shape="poly" alt=":Association" id="areadiagram_map_CIAt2TmFYEDMxwzP_default" href="Association_YIAt2TmFYEDMxwzK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1729.0, 484.34286, 1623.0, 485.85715, 1623.0, 485.85715, 1623.0, 499.85715, 1623.0, 499.85715, 1729.0, 498.34286, 1729.0, 498.34286, 1729.0, 484.34286" coords2="1729.0, 484.34286, 1623.0, 485.85715, 1623.0, 485.85715, 1623.0, 499.85715, 1623.0, 499.85715, 1729.0, 498.34286, 1729.0, 498.34286, 1729.0, 484.34286" shape="poly" alt=":Association" id="areadiagram_map_MgDcDTmFYEDcUQ4S_default" href="Association_MgDcDTmFYEDcUQ4N.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1681.0, 520.0, 1676.7522, 616.0, 1505.0, 616.0, 1505.0, 630.0, 1676.1327, 630.0, 1676.0, 633.0, 1690.0, 633.0, 1690.1327, 630.0, 1693.0, 630.0, 1693.0, 616.0, 1690.7522, 616.0, 1695.0, 520.0" coords2="1681.0, 520.0, 1676.7522, 616.0, 1505.0, 616.0, 1505.0, 630.0, 1676.1327, 630.0, 1676.0, 633.0, 1690.0, 633.0, 1690.1327, 630.0, 1693.0, 630.0, 1693.0, 616.0, 1690.7522, 616.0, 1695.0, 520.0" shape="poly" alt=":Association" id="areadiagram_map_FQXcDTmFYEDcUQ4j_default" href="Association_7AXcDTmFYEDcUQ4e.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="801.0, 602.0, 801.0, 605.0, 798.0, 605.0, 798.0, 619.0, 801.0, 619.0, 801.0, 648.0, 169.0, 648.0, 169.0, 662.0, 801.0, 662.0, 801.0, 665.0, 815.0, 665.0, 815.0, 662.0, 818.0, 662.0, 818.0, 648.0, 815.0, 648.0, 815.0, 619.0, 1348.0, 619.0, 1348.0, 605.0, 815.0, 605.0, 815.0, 602.0" coords2="801.0, 602.0, 801.0, 605.0, 798.0, 605.0, 798.0, 619.0, 801.0, 619.0, 801.0, 648.0, 169.0, 648.0, 169.0, 662.0, 801.0, 662.0, 801.0, 665.0, 815.0, 665.0, 815.0, 662.0, 818.0, 662.0, 818.0, 648.0, 815.0, 648.0, 815.0, 619.0, 1348.0, 619.0, 1348.0, 605.0, 815.0, 605.0, 815.0, 602.0" shape="poly" alt=":Association" id="areadiagram_map_hpG8DTmFYEDcUQ4__default" href="Association_ipG8DTmFYEDcUQ46.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="251.0, 33.0, 251.0, 36.0, 248.0, 36.0, 248.0, 50.0, 251.0, 50.0, 251.0, 316.0, 169.0, 316.0, 169.0, 330.0, 251.0, 330.0, 251.0, 333.0, 265.0, 333.0, 265.0, 330.0, 268.0, 330.0, 268.0, 316.0, 265.0, 316.0, 265.0, 50.0, 1417.0, 50.0, 1417.0, 592.0, 1431.0, 592.0, 1431.0, 50.0, 1434.0, 50.0, 1434.0, 36.0, 1431.0, 36.0, 1431.0, 33.0, 1417.0, 33.0, 1417.0, 36.0, 265.0, 36.0, 265.0, 33.0" coords2="251.0, 33.0, 251.0, 36.0, 248.0, 36.0, 248.0, 50.0, 251.0, 50.0, 251.0, 316.0, 169.0, 316.0, 169.0, 330.0, 251.0, 330.0, 251.0, 333.0, 265.0, 333.0, 265.0, 330.0, 268.0, 330.0, 268.0, 316.0, 265.0, 316.0, 265.0, 50.0, 1417.0, 50.0, 1417.0, 592.0, 1431.0, 592.0, 1431.0, 50.0, 1434.0, 50.0, 1434.0, 36.0, 1431.0, 36.0, 1431.0, 33.0, 1417.0, 33.0, 1417.0, 36.0, 265.0, 36.0, 265.0, 33.0" shape="poly" alt=":Association" id="areadiagram_map_nAJ8DTmFYEDcUQ5M_default" href="Association_2Nx8DTmFYEDcUQ5H.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="161.0, 683.0, 161.0, 1158.0, 158.0, 1158.0, 158.0, 1172.0, 161.0, 1172.0, 161.0, 1175.0, 175.0, 1175.0, 175.0, 1172.0, 617.0, 1172.0, 617.0, 1158.0, 175.0, 1158.0, 175.0, 683.0" coords2="161.0, 683.0, 161.0, 1158.0, 158.0, 1158.0, 158.0, 1172.0, 161.0, 1172.0, 161.0, 1175.0, 175.0, 1175.0, 175.0, 1172.0, 617.0, 1172.0, 617.0, 1158.0, 175.0, 1158.0, 175.0, 683.0" shape="poly" alt=":Association" id="areadiagram_map_IyglkjmFYEDKyBHQ_default" href="Association_vSglkjmFYEDKyBHL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="531.1392, 843.0, 531.6962, 887.0, 545.6962, 887.0, 545.1392, 843.0" coords2="531.1392, 843.0, 531.6962, 887.0, 545.6962, 887.0, 545.1392, 843.0" shape="poly" alt=":Include" id="areadiagram_map_v1LrmzmFYEDKAhET_default" href="Include_r1LrmzmFYEDKAhES.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="-5.0, 278.0, -5.0, 281.0, -8.0, 281.0, -8.0, 295.0, -5.0, 295.0, -5.0, 1371.0, -8.0, 1371.0, -8.0, 1385.0, -5.0, 1385.0, -5.0, 1388.0, 9.0, 1388.0, 9.0, 1385.0, 404.0, 1385.0, 404.0, 1371.0, 9.0, 1371.0, 9.0, 295.0, 139.0, 295.0, 139.0, 282.0, 149.0, 282.0, 149.0, 281.0, 9.0, 281.0, 9.0, 278.0" coords2="-5.0, 278.0, -5.0, 281.0, -8.0, 281.0, -8.0, 295.0, -5.0, 295.0, -5.0, 1371.0, -8.0, 1371.0, -8.0, 1385.0, -5.0, 1385.0, -5.0, 1388.0, 9.0, 1388.0, 9.0, 1385.0, 404.0, 1385.0, 404.0, 1371.0, 9.0, 1371.0, 9.0, 295.0, 139.0, 295.0, 139.0, 282.0, 149.0, 282.0, 149.0, 281.0, 9.0, 281.0, 9.0, 278.0" shape="poly" alt=":Association" id="areadiagram_map_9jd9fzmGAqAoiBpD_default" href="Association__jd9fzmGAqAoiBo_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="108.0, 683.0, 108.0, 1345.0, 105.0, 1345.0, 105.0, 1359.0, 108.0, 1359.0, 108.0, 1362.0, 122.0, 1362.0, 122.0, 1359.0, 404.0, 1359.0, 404.0, 1345.0, 122.0, 1345.0, 122.0, 683.0" coords2="108.0, 683.0, 108.0, 1345.0, 105.0, 1345.0, 105.0, 1359.0, 108.0, 1359.0, 108.0, 1362.0, 122.0, 1362.0, 122.0, 1359.0, 404.0, 1359.0, 404.0, 1345.0, 122.0, 1345.0, 122.0, 683.0" shape="poly" alt=":Association" id="areadiagram_map_ofv9fzmGAqAoiBpT_default" href="Association_Zvv9fzmGAqAoiBpO.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="548.0, 1387.0, 548.0, 1401.0, 629.0, 1401.0, 629.0, 1387.0" coords2="548.0, 1387.0, 548.0, 1401.0, 629.0, 1401.0, 629.0, 1387.0" shape="poly" alt=":Include" id="areadiagram_map_5wgXfzmGAqAoiBuz_default" href="Include_cwgXfzmGAqAoiBuy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="219.0, 351.0, 206.0, 356.0, 279.0, 491.05, 279.0, 500.0, 283.83783, 500.0, 286.0, 504.0, 296.4, 500.0, 1270.0, 500.0, 1270.0, 503.0, 1284.0, 503.0, 1284.0, 500.0, 1287.0, 500.0, 1287.0, 486.0, 1284.0, 486.0, 1284.0, 392.0, 1270.0, 392.0, 1270.0, 486.0, 291.97296, 486.0, 219.0, 351.0" coords2="219.0, 351.0, 206.0, 356.0, 279.0, 491.05, 279.0, 500.0, 283.83783, 500.0, 286.0, 504.0, 296.4, 500.0, 1270.0, 500.0, 1270.0, 503.0, 1284.0, 503.0, 1284.0, 500.0, 1287.0, 500.0, 1287.0, 486.0, 1284.0, 486.0, 1284.0, 392.0, 1270.0, 392.0, 1270.0, 486.0, 291.97296, 486.0, 219.0, 351.0" shape="poly" alt=":Association" id="areadiagram_map_n33XYLmGAqAoiBKn_default" href="Association_rX3XYLmGAqAoiBKi.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1305.0, 392.0, 1305.0, 565.0, 794.0, 565.0, 794.0, 562.0, 780.0, 562.0, 780.0, 565.0, 777.0, 565.0, 777.0, 579.0, 780.0, 579.0, 780.0, 635.0, 169.0, 635.0, 169.0, 649.0, 780.0, 649.0, 780.0, 652.0, 794.0, 652.0, 794.0, 649.0, 797.0, 649.0, 797.0, 635.0, 794.0, 635.0, 794.0, 579.0, 1305.0, 579.0, 1305.0, 582.0, 1319.0, 582.0, 1319.0, 579.0, 1322.0, 579.0, 1322.0, 565.0, 1319.0, 565.0, 1319.0, 392.0" coords2="1305.0, 392.0, 1305.0, 565.0, 794.0, 565.0, 794.0, 562.0, 780.0, 562.0, 780.0, 565.0, 777.0, 565.0, 777.0, 579.0, 780.0, 579.0, 780.0, 635.0, 169.0, 635.0, 169.0, 649.0, 780.0, 649.0, 780.0, 652.0, 794.0, 652.0, 794.0, 649.0, 797.0, 649.0, 797.0, 635.0, 794.0, 635.0, 794.0, 579.0, 1305.0, 579.0, 1305.0, 582.0, 1319.0, 582.0, 1319.0, 579.0, 1322.0, 579.0, 1322.0, 565.0, 1319.0, 565.0, 1319.0, 392.0" shape="poly" alt=":Association" id="areadiagram_map_FIU3YLmGAqAoiBK4_default" href="Association_aIU3YLmGAqAoiBKz.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="398.0, 603.08765, 158.0, 605.0, 158.0, 612.0, 169.0, 612.0, 169.0, 618.91235, 169.0, 618.91235, 409.0, 617.0, 409.0, 609.0, 398.0, 609.0, 398.0, 603.08765" coords2="398.0, 603.08765, 158.0, 605.0, 158.0, 612.0, 169.0, 612.0, 169.0, 618.91235, 169.0, 618.91235, 409.0, 617.0, 409.0, 609.0, 398.0, 609.0, 398.0, 603.08765" shape="poly" alt=":Association" id="areadiagram_map_pNvg4LmGAqAoiBQu_default" href="Association_8Nvg4LmGAqAoiBQp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="210.0, 352.0, 250.25, 720.0, 249.0, 720.0, 249.0, 734.0, 251.78125, 734.0, 252.0, 736.0, 266.0, 736.0, 265.78125, 734.0, 926.0, 734.0, 926.0, 720.0, 264.25, 720.0, 224.0, 352.0" coords2="210.0, 352.0, 250.25, 720.0, 249.0, 720.0, 249.0, 734.0, 251.78125, 734.0, 252.0, 736.0, 266.0, 736.0, 265.78125, 734.0, 926.0, 734.0, 926.0, 720.0, 264.25, 720.0, 224.0, 352.0" shape="poly" alt=":Association" id="areadiagram_map_sFD04LmGAqAoiBT3_default" href="Association_05D04LmGAqAoiBTy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="564.0, 974.9032, 564.0, 987.0, 534.5, 987.0, 648.0, 994.3226, 648.0, 994.3226, 648.0, 987.0, 705.0, 987.0, 705.0, 984.0, 564.0, 974.9032" coords2="564.0, 974.9032, 564.0, 987.0, 534.5, 987.0, 648.0, 994.3226, 648.0, 994.3226, 648.0, 987.0, 705.0, 987.0, 705.0, 984.0, 564.0, 974.9032" shape="poly" alt=":Include" id="areadiagram_map_OMst4LmFYEDMwBHK_default" href="Include_yMst4LmFYEDMwBHJ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="564.0, 902.0, 564.0, 916.0, 685.0, 916.0, 685.0, 902.0" coords2="564.0, 902.0, 564.0, 916.0, 685.0, 916.0, 685.0, 902.0" shape="poly" alt=":Extend" id="areadiagram_map_KSwj4LmFYEDMwBJJ_default" href="Extend_sSwj4LmFYEDMwBJH.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="466.0, 987.0, 466.0, 1032.0, 480.0, 1032.0, 480.0, 987.0" coords2="466.0, 987.0, 466.0, 1032.0, 480.0, 1032.0, 480.0, 987.0" shape="poly" alt=":Extend" id="areadiagram_map_hF3r4LmFYEDMwBOT_default" href="Extend_mF3r4LmFYEDMwBOR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="488.0, 1428.0, 522.0, 1462.0, 522.0, 1452.0, 532.0, 1452.0, 508.0, 1428.0" coords2="488.0, 1428.0, 522.0, 1462.0, 522.0, 1452.0, 532.0, 1452.0, 508.0, 1428.0" shape="poly" alt=":Include" id="areadiagram_map_nqgb4LmFYEDMwBOz_default" href="Include_Tqgb4LmFYEDMwBOy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="185.0, 353.0, 185.0, 1141.0, 182.0, 1141.0, 182.0, 1155.0, 185.0, 1155.0, 185.0, 1158.0, 199.0, 1158.0, 199.0, 1155.0, 617.0, 1155.0, 617.0, 1142.0, 670.0, 1142.0, 670.0, 1141.0, 199.0, 1141.0, 199.0, 353.0" coords2="185.0, 353.0, 185.0, 1141.0, 182.0, 1141.0, 182.0, 1155.0, 185.0, 1155.0, 185.0, 1158.0, 199.0, 1158.0, 199.0, 1155.0, 617.0, 1155.0, 617.0, 1142.0, 670.0, 1142.0, 670.0, 1141.0, 199.0, 1141.0, 199.0, 353.0" shape="poly" alt=":Association" id="areadiagram_map_DqIMarmGAqAoiBIR_default" href="Association_BqIMarmGAqAoiBIM.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="507.0, 1311.0, 507.0, 1338.0, 521.0, 1338.0, 521.0, 1311.0" coords2="507.0, 1311.0, 507.0, 1338.0, 521.0, 1338.0, 521.0, 1311.0" shape="poly" alt=":Include" id="areadiagram_map_rdJVEbmGAqAoiBLR_default" href="Include_SdJVEbmGAqAoiBLJ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL EMPRESARIO POR MEDIO DE ESTA OPCI&amp;#211;N PUEDE SUBIR CONFIDENCIALMENTE EL 
+      ARCHIVO TIPO EXCEL (QUE ES EL DESCARGADO DE SU SISTEMA DE VENTAS CON LOS 
+      PRODUCTOS VENDIDOS DEL DIA POR TIENDA) PARA QUE EL ADMIN DE INVENTARIO 
+      QUIEN REGISTRARA USUALMENTE LA SALIDA DE LOS &amp;nbsp;PRODUCTOS, PUEDA DESCARGAR 
+      ESTE ARCHIVO, PERO EL SISTEMA PROCESARA SOLO LAS COLUMNAS REQUERIDAS 
+      COMO: PRODUCTO, PRESENTACION, MARCA Y CANTIDAD, (PARA MANTENER 
+      PRIVACIDAD EN CUANTO A GANANCIAS U PRECIOS TOTALES).
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="469, 1218, 580, 1311" coords2="469, 1218, 580, 1311" shape="rect" alt="SUBIR Y DESCARGAR EVIDENCIA:Use Case" id="areadiagram_map_6fSSEbmGAqAoiBw5_default" href="UseCase_GfSSEbmGAqAoiBw6.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','469, 1218, 580, 1311',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '469, 1218, 580, 1311'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL APARTADO DE DESCRIPCION DE SALIDA ES OBLIGATORIA SOLO SI SELECCIONA 
+      UN MOTIVO DE SALIDA DE INVENTARIO COMO (Da&amp;#241;o, Consumo interno, 
+      Vencimiento), PARA OTROS MOTIVOS DIFERENTES ES OPCIONAL Y ESTE APARTADO, 
+      PARA INGRESAR UNA DESCRIPCION APARACE AL CASI FINALIZAR EL PROCESO DE 
+      REGISTRO DE SALIDA DE INVENTARIO
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="522, 1452, 647, 1523" coords2="522, 1452, 647, 1523" shape="rect" alt="DESCRIPCION DE SALIDA:Use Case" id="areadiagram_map_dHKXfzmGAqAoiBvY_default" href="UseCase_dHKXfzmGAqAoiBvZ.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','522, 1452, 647, 1523',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '522, 1452, 647, 1523'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      POR MEDIO DE ESTA OPCION QUE SE ENCUENTRA DENTRO DEL FORMULARIO / 
+      VENTANA DE &amp;quot;REGISTRO DE SALIDA&amp;quot; CON DEMAS OPCIONES DE ENTRADA DE DATOS, 
+      EL ADMINISTRADOR DE INVENTARIO O EMPRESARIO, CARGA EL EXCEL COMPARTIDO 
+      POR EMPLEADO SEGUN TIENDA ASIGNADA, SIENDO LA EVIDENCIA DE RESPALDO PARA 
+      EDITAR Y DESCONTAR PRODUCTOS EN INVENTARIO
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="629, 1354, 767, 1452" coords2="629, 1354, 767, 1452" shape="rect" alt="CARGAR Y PROCESAR RESPALDO DE SALIDA0:Use Case" id="areadiagram_map_sggXfzmGAqAoiBuk_default" href="UseCase_sggXfzmGAqAoiBul.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','629, 1354, 767, 1452',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','UseCase_CNEsHzmFYEDOLw6O.html/SALIDA DE PRODUCTOS/UseCase'),new Array(),new Array()),showReferenceIcon('diagram', '629, 1354, 767, 1452'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL ADMINISTRADOR DE INVENTARIO Y EMPRESARIO, PUEDEN REGISTRAR LA SALIDA 
+      DE PRODUCTOS, LLENANDO LOS CAMPOS SOLICITADOS Y SUBIENDO UNA EVIDENCIA 
+      VALIDA COMO EL EXCEL DEL TOTAL DE VENTAS QUE LE COMPARTIERON A &amp;#201;L: LOS 
+      EMPLEADOS DE CADA TIENDA, EL SISTEMA LE PERMITE SUBIR ESTE ARCHIVO, LEE 
+      LOS PRODUCTOS Y CANTIDAD DE CADA UNO, UNA VEZ LOS LEE, EL SISTEMA LE 
+      MUESTRA LOS PRODUCTOS A REGISTRAR LA SALIDA; POSTERIOR A ESTO EL USUARIO 
+      VALIDA QUE SEA CORRECTO EL ANALISIS O LO CORRIGE MANUALMENTE Y GUARDA EL 
+      REGISTRO.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="404, 1338, 548, 1428" coords2="404, 1338, 548, 1428" shape="rect" alt="SALIDA DE PRODUCTOS:Use Case" id="areadiagram_map_CNEsHzmFYEDOLw6N_default" href="UseCase_CNEsHzmFYEDOLw6O.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','404, 1338, 548, 1428',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '404, 1338, 548, 1428'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      PUEDE CARGAR LA IMAGEN O PDF DE LA FACTURA DE PROVEEDOR BRINDADA AL 
+      ADMINISTRADOR DE INVENTARIO AL CREAR UN INGRESO DE PRODUCTOS
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="462, 746, 624, 843" coords2="462, 746, 624, 843" shape="rect" alt="CARGAR RESPALDO DE ENTRADA:Use Case" id="areadiagram_map_VVLrmzmFYEDKAhEE_default" href="UseCase_VVLrmzmFYEDKAhEF.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','462, 746, 624, 843',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '462, 746, 624, 843'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL EMPRESARIO &amp;#211; EL ADMINISTRADOR DE INVENTARIO PUEDEN A&amp;#209;ADIR A UN 
+      PRODUCTO EN PROCESO DE INGRESO, UNA DESCRIPCION PARA INDICAR EL ESTADO 
+      DE ESTE O LO OCURRIDO CON ESTE U CUALQUIER OTRA OBSERVACION
+    &amp;lt;/p&amp;gt;
+    &amp;nbsp;
+  &amp;lt;/body&amp;gt;" coords="405, 1032, 563, 1120" coords2="405, 1032, 563, 1120" shape="rect" alt="DESCRIPCION DE INGRESO:Use Case" id="areadiagram_map_pRNjmzmFYEDKAhCk_default" href="UseCase_pRNjmzmFYEDKAhCl.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','405, 1032, 563, 1120',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','UseCase_K3sFkjmFYEDKyBFd.html/INGRESOS DE PRODUCTOS/UseCase'),new Array(),new Array()),showReferenceIcon('diagram', '405, 1032, 563, 1120'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      TODOS LOS USUARIOS VAN A VER LAS LISTAS GESTIONADAS O PENDIENTES CON LOS 
+      ART&amp;#205;CULOS ENTREGADOS O RECHAZADOS POR NOVEDADES EN EL INVENTARIO DE 
+      ACUERDO A SI FUE SOLICITADA AL ADMINISTRADOR DE INVENTARIO O A UN 
+      EMPLEADO DE OTRA TIENDA.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1348, 592, 1505, 672" coords2="1348, 592, 1505, 672" shape="rect" alt="CONSULTAR HISTORIAL DE REMISIONES:Use Case" id="areadiagram_map_QyxcDTmFYEDcUQ3m_default" href="UseCase_QyxcDTmFYEDcUQ3n.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1348, 592, 1505, 672',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1348, 592, 1505, 672'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL EMPLEADO CREA UNA LISTA EN LA PLATAFORMA CON LOS ART&amp;#205;CULOS FALTANTES 
+      EN LA TIENDA, PARA QUE LE LLEGUE AL ADMIN. DE INVENTARIO O AL EMPLEADO 
+      DE OTRA TIENDA, Y &amp;#201;STE PUEDA PREPARAR LA MERCANC&amp;#205;A PARA LA TIENDA 
+      SOLICITANTE.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1468, 452, 1623, 534" coords2="1468, 452, 1623, 534" shape="rect" alt="CREAR REMISION:Use Case" id="areadiagram_map_AoRcDTmFYEDcUQ3U_default" href="UseCase_AoRcDTmFYEDcUQ3V.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1468, 452, 1623, 534',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1468, 452, 1623, 534'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p class=&amp;quot;MsoNormal&amp;quot; style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      PERMITE AL ADMINISTRADOR DE INVENTARIO Y AL EMPRESARIO VISUALIZAR EL 
+      HISTORIAL DE MODIFICACIONES REALIZADAS EN EL SISTEMA, INCLUYENDO 
+      ACCIONES COMO ENTRADAS Y SALIDAS DE PRODUCTOS, JUNTO CON INFORMACI&amp;#211;N 
+      DETALLADA DE CADA EVENTO (USUARIO, FECHA, HORA Y CAMBIOS REALIZADOS).&amp;lt;o p=&amp;quot;#DEFAULT&amp;quot;&amp;gt;&amp;lt;/o&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="398, 519, 533, 609" coords2="398, 519, 533, 609" shape="rect" alt="CONSULTAR HISTORIAL:Use Case" id="areadiagram_map_DwzjcjmFYEDM_Q_q_default" href="UseCase_DwzjcjmFYEDM_Q_r.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','398, 519, 533, 609',new Array(),new Array(),new Array(),new Array('/CONSULTAR HISTORIAL Requirements Spec/ReportDiagram'),new Array(),new Array(),new Array('Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '398, 519, 533, 609'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EN CASO DE QUE EL ACTOR OLVIDE SU CONTRASE&amp;#209;A, PUEDE CAMBIARLA 
+      AUTONOMAMENTE DESDE LA OPCI&amp;#211;N OLVID&amp;#201; MI CONTRASE&amp;#209;A DESDE LOGIN.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1240, 302, 1387, 392" coords2="1240, 302, 1387, 392" shape="rect" alt="CAMBIAR CONTRASEÑA:Use Case" id="areadiagram_map_rTLacjmFYEDM_Qv5_default" href="UseCase_rTLacjmFYEDM_Qv6.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1240, 302, 1387, 392',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1240, 302, 1387, 392'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      PERMITE AL ADMIN DEL INVENTARIO &amp;#211; EMPRESARIO INGRESAR UNA CANTIDAD DE 
+      ARTICULOS YA EXISTENTES EN EL INVENTARIO O NUEVOS, LLENANDO INFORMACION 
+      PARA CADA PRODUCTO A INGRESAR COMO: NOMBRE, MARCA, CATEGORIA, 
+      PRESENTACION, UBICACION, LA CANTIDAD A INGRESAR, #LOTE FECHA DE INGRESO, 
+      FECHA VENCIMIENTO Y EL SISTEMA ACTUALIZA LA CANTIDAD DISPONIBLE DE CADA 
+      PRODUCTO CON TODA SU INFOMACION
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="399, 887, 564, 987" coords2="399, 887, 564, 987" shape="rect" alt="INGRESOS DE PRODUCTOS:Use Case" id="areadiagram_map_K3sFkjmFYEDKyBFc_default" href="UseCase_K3sFkjmFYEDKyBFd.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','399, 887, 564, 987',new Array(),new Array(),new Array(),new Array('/INGRESAR STOCK Requirements Spec/ReportDiagram'),new Array(),new Array(),new Array('Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '399, 887, 564, 987'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p class=&amp;quot;MsoNormal&amp;quot; style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      PERMITE AL ADMINISTRADOR O EMPRESARIO LOCALIZAR, PREVISUALIZAR Y 
+      DESCARGAR LOS ARCHIVOS DIGITALES (FACTURAS O ACTAS) QUE FUERON 
+      VINCULADOS A UNA TRANSACCI&amp;#211;N ESPEC&amp;#205;FICA DE ENTRADA O SALIDA DE MERCANC&amp;#205;A 
+      EN EL HISTORIAL DEL SISTEMA.&amp;lt;o p=&amp;quot;#DEFAULT&amp;quot;&amp;gt;&amp;lt;/o&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="617, 1142, 765, 1248" coords2="617, 1142, 765, 1248" shape="rect" alt="CONSULTAR EVIDENCIAS DE INGRESOS Y SALIDAS:Use Case" id="areadiagram_map_AjAFkjmFYEDKyBEy_default" href="UseCase_AjAFkjmFYEDKyBEz.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','617, 1142, 765, 1248',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('UseCase_QyxcDTmFYEDcUQ3n.html/CONSULTAR HISTORIAL DE REMISIONES/UseCase','UseCase_DwzjcjmFYEDM_Q_r.html/CONSULTAR HISTORIAL/UseCase','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '617, 1142, 765, 1248'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="139, 282, 169, 342" coords2="139, 282, 169, 342" shape="rect" alt="EMPRESARIO:Actor" id="areadiagram_map_eIDvwjmFYEDcxg6A_default" href="Actor_eIDvwjmFYEDcxg6B.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1729, 462, 1759, 522" coords2="1729, 462, 1759, 522" shape="rect" alt="EMPLEADO:Actor" id="areadiagram_map_svUnwjmFYEDcxgyE_default" href="Actor_svUnwjmFYEDcxgyF.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      SELECCIONAR UN USUARIO CON UN ROL ASIGNADO, DONDE SE PUEDE SUSTITUIR EL 
+      ROL ACTUAL POR UNO NUEVO. TRAS LA MODIFICACION Y VALIDACION, EL SISTEMA 
+      ACTUALIZA INMEDIATAMENTE LOS NIVELES DE ACCESO AL USUARIO.
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      TENIENDO PRESENTE LOS ROLES:
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      - EMPRESARIO
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      - ADMINISTRADOR DE INVENTARIO
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      - EMPLEADO
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      - PENDIENTE (VISUALIZA UNA PANTALLA EN BLANCO SI SU ROL NO SE MODIFICA 
+      DESPUES DE 7 MESES SE ELIMINA EL USUARIO CREADO)
+    &amp;lt;/p&amp;gt;
+    USUARIO
+  &amp;lt;/body&amp;gt;" coords="636, 254, 766, 357" coords2="636, 254, 766, 357" shape="rect" alt="MODIFICAR ROLES:Use Case" id="areadiagram_map_Y5mYkjmFYEDKyAr8_default" href="UseCase_Y5mYkjmFYEDKyAr9.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','636, 254, 766, 357',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '636, 254, 766, 357'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL EMPRESARIO VA A TENER HABILITADA &amp;#201;STA FUNCI&amp;#211;N PARA ACTUALIZAR LA 
+      INFORMACI&amp;#211;N EN LOS CAMPOS EDITABLES COMO: NOMBRES, APELLIDOS, CORREO, 
+      EPS, CONTACTO DE EMERGENCIA, CELULAR. TRAS REALIZAR LOS CAMBIOS, EL 
+      SISTEMA VALIDA QUE LOS NUEVOS DATOS CUMPLAN CON LOS FORMATOS REQUERIDOS.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="610, 518, 733, 603" coords2="610, 518, 733, 603" shape="rect" alt="MODIFICAR DATOS PERSONALES:Use Case" id="areadiagram_map_x3ngkjmFYEDKyAjP_default" href="UseCase_x3ngkjmFYEDKyAjQ.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','610, 518, 733, 603',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '610, 518, 733, 603'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      CUALQUIER USUARIO PUEDE VISUALIZAR LA CANTIDAD DE ARTICULOS DISPONIBLE 
+      QUE SE ENCUENTRAN EN LA BODEGA, LAS TIENDAS, O EL INVENTARIO EN GENERAL.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="926, 656, 1076, 800" coords2="926, 656, 1076, 800" shape="rect" alt="CONSULTAR INVENTARIO:Use Case" id="areadiagram_map_59QOIjmFYEDcxhVU_default" href="UseCase_59QOIjmFYEDcxhVV.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','926, 656, 1076, 800',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '926, 656, 1076, 800'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      LOS USUARIOS VAN FINALIZAR SU SESI&amp;#211;N EN LA PLATAFORMA, PARA LUEGO 
+      REDIRIGIRLOS A LA PANTALLA DE INICIO DE SESI&amp;#211;N.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="954, 1518, 1045, 1586" coords2="954, 1518, 1045, 1586" shape="rect" alt="LOG OUT:Use Case" id="areadiagram_map_1aJ6IjmFYEDcxhCd_default" href="UseCase_1aJ6IjmFYEDcxhCe.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','954, 1518, 1045, 1586',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '954, 1518, 1045, 1586'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      DE ACUERDO AL CARGO QUE VA A TENER EL USUARIO, SE LE DAR&amp;#193; UN CONJUNTO 
+      ESPEC&amp;#205;FICO DE PERMISOS OPERATIVOS DENTRO DE LA PLATAFORMA WEB.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="416, 182, 546, 289" coords2="416, 182, 546, 289" shape="rect" alt="ASIGNAR ROLES:Use Case" id="areadiagram_map_h.MgIjmFYEDcxg9j_default" href="UseCase_h_MgIjmFYEDcxg9k.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','416, 182, 546, 289',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '416, 182, 546, 289'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      CUANDO EL SISTEMA DETECTE QUE DESDE LA FECHA DE INGRESO ALGUNOS DE LOS 
+      ART&amp;#205;CULOS SE ACERCAN A SU CADUCIDAD, SE GENERAR&amp;#193; UNA NOTIFICACI&amp;#211;N 
+      ANTICIPADA AUTOM&amp;#193;TICA (1 MES, 15 D&amp;#205;AS Y EL MISMO D&amp;#205;A) AL EMPRESARIO, 
+      ADMIN. DE INVENTARIO Y EMPLEADO DENTRO DE LA MISMA PLATAFORMA PARA QUE 
+      PUEDAN PRIORIZAR LOS MISMOS Y TOMAR MEDIDAS.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1243, 965, 1431, 1142" coords2="1243, 965, 1431, 1142" shape="rect" alt="SISTEMA                                                                     NOTIFICAR CADUCIDAD PRODUCTOS:Use Case" id="areadiagram_map_mcTfwjmFYEDcxg75_default" href="UseCase_mcTfwjmFYEDcxg76.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1243, 965, 1431, 1142',new Array(),new Array(),new Array(),new Array('/SISTEMA                                                                     NOTIFICAR CADUCIDAD PRODUCTOS Requirements Spec/ReportDiagram'),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1243, 965, 1431, 1142'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      PERMITE AL EMPRESARIO, AL ADMIN. DE INVENTARIO Y EMPLEADO, CONSULTAR 
+      INFORMACION DE LOS 5 ARTICULOS M&amp;#193;S VENDIDOS (CON MAS SALIDAS DEL 
+      INVENTARIO CON MOTIVO DE SALIDA &amp;quot;VENTA&amp;quot;) DEL STOCK EN EL MES Y LOS 5 
+      MENOS VENDIDOS (PRODUCTOS CON MENOS SALIDAS DEL INVENTARIO CON MOTIVO DE 
+      SALIDA &amp;quot;VENTA&amp;quot;), CON MOTIVO DE SALIDA DE &amp;quot;VENTA&amp;quot; PARA NO TENER PRESENTE 
+      AQUELLOS QUE SALIERON POR DA&amp;#209;O, HURTO, CONSUMO INTERNO U OTROS, SINO LOS 
+      SOLICITADOS POR CLIENTES EN COMPRAS.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1076, 1230, 1261, 1388" coords2="1076, 1230, 1261, 1388" shape="rect" alt="SISTEMA                                                                                                 MOSTRAR ESTADÍSTICAS:Use Case" id="areadiagram_map_aD4fwjmFYEDcxg7d_default" href="UseCase_aD4fwjmFYEDcxg7e.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      &amp;nbsp;EL SISTEMA VA A CONTRASTAR LAS CREDENCIALES INGRESADAS CON LA BASE DE 
+      DATOS PARA PERMITIR EL INGRESO AL SISTEMA; SI LOS DATOS COINCIDEN SE LE 
+      DA ACCESO AL ENTORNO DE TRABAJO; DE LO CONTRARIO, SE LE DA UN MENSAJE DE 
+      ALERTA DE CONTRASE&amp;#209;A INVALIDA Y RECOMENDACION PARA QUE CAMBIE LA 
+      CONTRASE&amp;#209;A.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="898, 302, 1035, 377" coords2="898, 302, 1035, 377" shape="rect" alt="VALIDAR CONTRASEÑA:Use Case" id="areadiagram_map_lTXXwjmFYEDcxg15_default" href="UseCase_lTXXwjmFYEDcxg16.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','898, 302, 1035, 377',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('UseCase_rTLacjmFYEDM_Qv6.html/CAMBIAR CONTRASE&#xd1;A/UseCase'),new Array(),new Array()),showReferenceIcon('diagram', '898, 302, 1035, 377'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL SISTEMA BUSCA EN LA BASE DE DATOS LOS PERMISOS Y ACCESOS OTORGADOS AL 
+      USUARIO DE ACUERDO A SU ROL ASIGNADO EN EL MOMENTO DE SU REGISTRO &amp;#211; 
+      MODIFICACION
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1076, 240, 1186, 311" coords2="1076, 240, 1186, 311" shape="rect" alt="VALIDAR ROLES:Use Case" id="areadiagram_map_oTbXwjmFYEDcxg1L_default" href="UseCase_oTbXwjmFYEDcxg1M.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1076, 240, 1186, 311',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','UseCase_59QOIjmFYEDcxhVV.html/CONSULTAR INVENTARIO/UseCase'),new Array(),new Array()),showReferenceIcon('diagram', '1076, 240, 1186, 311'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL ADMIN DEL INVENTARIO &amp;#211; EMPRESARIO PUEDE CREAR UN LOTE (SIENDO UNICOS 
+      POR INGRESO DE PRODUCTOS) O ASOCIARLO JUNTO CON UNA FECHA DE CADUDIDAD A 
+      UN PRODUCTO YA EXISTENTE (POR EJEMPLO PARA LA BUSQUEDA DE INVENTARIO POR 
+      MEDIO DE FILTROS)
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="648, 987, 803, 1072" coords2="648, 987, 803, 1072" shape="rect" alt="CREAR LOTES - PRODUCTOS:Use Case" id="areadiagram_map_oaJXwjmFYEDcxg0a_default" href="UseCase_oaJXwjmFYEDcxg0b.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','648, 987, 803, 1072',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('UseCase_mcTfwjmFYEDcxg76.html/SISTEMA                                                                     NOTIFICAR CADUCIDAD PRODUCTOS/UseCase','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','UseCase_59QOIjmFYEDcxhVV.html/CONSULTAR INVENTARIO/UseCase','UseCase_K3sFkjmFYEDKyBFd.html/INGRESOS DE PRODUCTOS/UseCase'),new Array(),new Array()),showReferenceIcon('diagram', '648, 987, 803, 1072'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      PERMITE REGISTRAR UNA NUEVA OPCION INDIVIDUALMENTE PARA OPCIONES DE 
+      INGRESO COMO CATEGOR&amp;#205;A, MARCA Y PRESENTACION EN LA PLATAFORMA DE SER 
+      NECESARIO.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="685, 861, 868, 945" coords2="685, 861, 868, 945" shape="rect" alt="CREAR MARCA, CATEGORIA Y PRESENTACION:Use Case" id="areadiagram_map_nE.nwjmFYEDcxgzO_default" href="UseCase_nE_nwjmFYEDcxgzP.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','685, 861, 868, 945',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '685, 861, 868, 945'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      A PARTIR DE REGISTROS DE DATOS B&amp;#193;SICOS COMO NOMBRE, CORREO, CONTRASE&amp;#209;A, 
+      Y SELECCION DE ROL CREAR LOS USUARIOS AUTORIZADOS PARA QUE INTERACTUEN 
+      CON LA PLATAFORMA WEB. SOLO AUTORIZADO POR EL EMPRESARIO.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="378, 357, 585, 468" coords2="378, 357, 585, 468" shape="rect" alt="CREAR USUARIOS:Use Case" id="areadiagram_map_8O6nwjmFYEDcxgy2_default" href="UseCase_8O6nwjmFYEDcxgy3.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','378, 357, 585, 468',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '378, 357, 585, 468'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      SE ENV&amp;#205;A UNA NOTIFICACI&amp;#211;N AUTOM&amp;#193;TICA AL EMPRESARIO V&amp;#205;A CORREO 
+      ELECTR&amp;#211;NICO CUANDO INGRESA EL ADMIN DE INVENTARIO EN LA PLATAFORMA WEB 
+      CON LA HORA DE INICIO DE SESION.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="453, 52, 593, 137" coords2="453, 52, 593, 137" shape="rect" alt="RECIBIR NOTIFICACIONES INGRESO:Use Case" id="areadiagram_map_V2SnwjmFYEDcxgyl_default" href="UseCase_V2SnwjmFYEDcxgym.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;&amp;quot;&amp;gt;
+      EL SISTEMA SOLICITA LA VALIDACION DE LOS DATOS (CORREO ELETR&amp;#211;NICO - 
+      CONTRASE&amp;#209;A) PARA CONSULTAR EL PERFIL DEL USUARIO EN LA BASE DE DATOS.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="926, 112, 1078, 183" coords2="926, 112, 1078, 183" shape="rect" alt="LOG IN:Use Case" id="areadiagram_map_2gcnwjmFYEDcxgyW_default" href="UseCase_2gcnwjmFYEDcxgyX.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','926, 112, 1078, 183',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('UseCase_lTXXwjmFYEDcxg16.html/VALIDAR CONTRASE&#xd1;A/UseCase','Actor_eIDvwjmFYEDcxg6B.html/EMPRESARIO/Actor','Actor_saUnwjmFYEDcxgx5.html/ADMIN INVENTARIO/Actor','Actor_svUnwjmFYEDcxgyF.html/EMPLEADO/Actor','UseCase_rTLacjmFYEDM_Qv6.html/CAMBIAR CONTRASE&#xd1;A/UseCase','UseCase_oTbXwjmFYEDcxg1M.html/VALIDAR ROLES/UseCase'),new Array(),new Array()),showReferenceIcon('diagram', '926, 112, 1078, 183'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="117, 612, 169, 672" coords2="117, 612, 169, 672" shape="rect" alt="ADMIN INVENTARIO:Actor" id="areadiagram_map_saUnwjmFYEDcxgx4_default" href="Actor_saUnwjmFYEDcxgx5.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="347, 2, 1657, 1608" coords2="347, 2, 1657, 1608" shape="rect" alt="DATASTOCK:System" id="areadiagram_map_fGonwjmFYEDcxgxy_default" href="System__GonwjmFYEDcxgxz.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/System.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/System.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="System__GonwjmFYEDcxgxz.html" class="ItemLink">DATASTOCK : System</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="Actor_saUnwjmFYEDcxgx5.html" class="ItemLink">ADMIN INVENTARIO : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="Actor_svUnwjmFYEDcxgyF.html" class="ItemLink">EMPLEADO : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="Actor_eIDvwjmFYEDcxg6B.html" class="ItemLink">EMPRESARIO : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_2gcnwjmFYEDcxgyX.html" class="ItemLink">LOG IN : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL SISTEMA SOLICITA LA VALIDACION DE LOS DATOS (CORREO ELETR&#211;NICO - 
+      CONTRASE&#209;A) PARA CONSULTAR EL PERFIL DEL USUARIO EN LA BASE DE DATOS.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_V2SnwjmFYEDcxgym.html" class="ItemLink">RECIBIR NOTIFICACIONES INGRESO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      SE ENV&#205;A UNA NOTIFICACI&#211;N AUTOM&#193;TICA AL EMPRESARIO V&#205;A CORREO 
+      ELECTR&#211;NICO CUANDO INGRESA EL ADMIN DE INVENTARIO EN LA PLATAFORMA WEB 
+      CON LA HORA DE INICIO DE SESION.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_8O6nwjmFYEDcxgy3.html" class="ItemLink">CREAR USUARIOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      A PARTIR DE REGISTROS DE DATOS B&#193;SICOS COMO NOMBRE, CORREO, CONTRASE&#209;A, 
+      Y SELECCION DE ROL CREAR LOS USUARIOS AUTORIZADOS PARA QUE INTERACTUEN 
+      CON LA PLATAFORMA WEB. SOLO AUTORIZADO POR EL EMPRESARIO.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_nE_nwjmFYEDcxgzP.html" class="ItemLink">CREAR MARCA, CATEGORIA Y PRESENTACION : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      PERMITE REGISTRAR UNA NUEVA OPCION INDIVIDUALMENTE PARA OPCIONES DE 
+      INGRESO COMO CATEGOR&#205;A, MARCA Y PRESENTACION EN LA PLATAFORMA DE SER 
+      NECESARIO.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_oaJXwjmFYEDcxg0b.html" class="ItemLink">CREAR LOTES - PRODUCTOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL ADMIN DEL INVENTARIO &#211; EMPRESARIO PUEDE CREAR UN LOTE (SIENDO UNICOS 
+      POR INGRESO DE PRODUCTOS) O ASOCIARLO JUNTO CON UNA FECHA DE CADUDIDAD A 
+      UN PRODUCTO YA EXISTENTE (POR EJEMPLO PARA LA BUSQUEDA DE INVENTARIO POR 
+      MEDIO DE FILTROS)
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_oTbXwjmFYEDcxg1M.html" class="ItemLink">VALIDAR ROLES : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL SISTEMA BUSCA EN LA BASE DE DATOS LOS PERMISOS Y ACCESOS OTORGADOS AL 
+      USUARIO DE ACUERDO A SU ROL ASIGNADO EN EL MOMENTO DE SU REGISTRO &#211; 
+      MODIFICACION
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_lTXXwjmFYEDcxg16.html" class="ItemLink">VALIDAR CONTRASEÑA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      &nbsp;EL SISTEMA VA A CONTRASTAR LAS CREDENCIALES INGRESADAS CON LA BASE DE 
+      DATOS PARA PERMITIR EL INGRESO AL SISTEMA; SI LOS DATOS COINCIDEN SE LE 
+      DA ACCESO AL ENTORNO DE TRABAJO; DE LO CONTRARIO, SE LE DA UN MENSAJE DE 
+      ALERTA DE CONTRASE&#209;A INVALIDA Y RECOMENDACION PARA QUE CAMBIE LA 
+      CONTRASE&#209;A.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_aD4fwjmFYEDcxg7e.html" class="ItemLink">SISTEMA                                                                                                 MOSTRAR ESTADÍSTICAS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      PERMITE AL EMPRESARIO, AL ADMIN. DE INVENTARIO Y EMPLEADO, CONSULTAR 
+      INFORMACION DE LOS 5 ARTICULOS M&#193;S VENDIDOS (CON MAS SALIDAS DEL 
+      INVENTARIO CON MOTIVO DE SALIDA &quot;VENTA&quot;) DEL STOCK EN EL MES Y LOS 5 
+      MENOS VENDIDOS (PRODUCTOS CON MENOS SALIDAS DEL INVENTARIO CON MOTIVO DE 
+      SALIDA &quot;VENTA&quot;), CON MOTIVO DE SALIDA DE &quot;VENTA&quot; PARA NO TENER PRESENTE 
+      AQUELLOS QUE SALIERON POR DA&#209;O, HURTO, CONSUMO INTERNO U OTROS, SINO LOS 
+      SOLICITADOS POR CLIENTES EN COMPRAS.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_mcTfwjmFYEDcxg76.html" class="ItemLink">SISTEMA                                                                     NOTIFICAR CADUCIDAD PRODUCTOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      CUANDO EL SISTEMA DETECTE QUE DESDE LA FECHA DE INGRESO ALGUNOS DE LOS 
+      ART&#205;CULOS SE ACERCAN A SU CADUCIDAD, SE GENERAR&#193; UNA NOTIFICACI&#211;N 
+      ANTICIPADA AUTOM&#193;TICA (1 MES, 15 D&#205;AS Y EL MISMO D&#205;A) AL EMPRESARIO, 
+      ADMIN. DE INVENTARIO Y EMPLEADO DENTRO DE LA MISMA PLATAFORMA PARA QUE 
+      PUEDAN PRIORIZAR LOS MISMOS Y TOMAR MEDIDAS.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_h_MgIjmFYEDcxg9k.html" class="ItemLink">ASIGNAR ROLES : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      DE ACUERDO AL CARGO QUE VA A TENER EL USUARIO, SE LE DAR&#193; UN CONJUNTO 
+      ESPEC&#205;FICO DE PERMISOS OPERATIVOS DENTRO DE LA PLATAFORMA WEB.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_1aJ6IjmFYEDcxhCe.html" class="ItemLink">LOG OUT : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      LOS USUARIOS VAN FINALIZAR SU SESI&#211;N EN LA PLATAFORMA, PARA LUEGO 
+      REDIRIGIRLOS A LA PANTALLA DE INICIO DE SESI&#211;N.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_59QOIjmFYEDcxhVV.html" class="ItemLink">CONSULTAR INVENTARIO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      CUALQUIER USUARIO PUEDE VISUALIZAR LA CANTIDAD DE ARTICULOS DISPONIBLE 
+      QUE SE ENCUENTRAN EN LA BODEGA, LAS TIENDAS, O EL INVENTARIO EN GENERAL.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_x3ngkjmFYEDKyAjQ.html" class="ItemLink">MODIFICAR DATOS PERSONALES : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL EMPRESARIO VA A TENER HABILITADA &#201;STA FUNCI&#211;N PARA ACTUALIZAR LA 
+      INFORMACI&#211;N EN LOS CAMPOS EDITABLES COMO: NOMBRES, APELLIDOS, CORREO, 
+      EPS, CONTACTO DE EMERGENCIA, CELULAR. TRAS REALIZAR LOS CAMBIOS, EL 
+      SISTEMA VALIDA QUE LOS NUEVOS DATOS CUMPLAN CON LOS FORMATOS REQUERIDOS.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_Y5mYkjmFYEDKyAr9.html" class="ItemLink">MODIFICAR ROLES : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      SELECCIONAR UN USUARIO CON UN ROL ASIGNADO, DONDE SE PUEDE SUSTITUIR EL 
+      ROL ACTUAL POR UNO NUEVO. TRAS LA MODIFICACION Y VALIDACION, EL SISTEMA 
+      ACTUALIZA INMEDIATAMENTE LOS NIVELES DE ACCESO AL USUARIO.
+    </p>
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      &nbsp;
+    </p>
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      TENIENDO PRESENTE LOS ROLES:
+    </p>
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      - EMPRESARIO
+    </p>
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      - ADMINISTRADOR DE INVENTARIO
+    </p>
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      - EMPLEADO
+    </p>
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      - PENDIENTE (VISUALIZA UNA PANTALLA EN BLANCO SI SU ROL NO SE MODIFICA 
+      DESPUES DE 7 MESES SE ELIMINA EL USUARIO CREADO)
+    </p>
+    USUARIO
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_AjAFkjmFYEDKyBEz.html" class="ItemLink">CONSULTAR EVIDENCIAS DE INGRESOS Y SALIDAS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p class="MsoNormal" style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      PERMITE AL ADMINISTRADOR O EMPRESARIO LOCALIZAR, PREVISUALIZAR Y 
+      DESCARGAR LOS ARCHIVOS DIGITALES (FACTURAS O ACTAS) QUE FUERON 
+      VINCULADOS A UNA TRANSACCI&#211;N ESPEC&#205;FICA DE ENTRADA O SALIDA DE MERCANC&#205;A 
+      EN EL HISTORIAL DEL SISTEMA.<o p="#DEFAULT"></o>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_K3sFkjmFYEDKyBFd.html" class="ItemLink">INGRESOS DE PRODUCTOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      PERMITE AL ADMIN DEL INVENTARIO &#211; EMPRESARIO INGRESAR UNA CANTIDAD DE 
+      ARTICULOS YA EXISTENTES EN EL INVENTARIO O NUEVOS, LLENANDO INFORMACION 
+      PARA CADA PRODUCTO A INGRESAR COMO: NOMBRE, MARCA, CATEGORIA, 
+      PRESENTACION, UBICACION, LA CANTIDAD A INGRESAR, #LOTE FECHA DE INGRESO, 
+      FECHA VENCIMIENTO Y EL SISTEMA ACTUALIZA LA CANTIDAD DISPONIBLE DE CADA 
+      PRODUCTO CON TODA SU INFOMACION
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_rTLacjmFYEDM_Qv6.html" class="ItemLink">CAMBIAR CONTRASEÑA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EN CASO DE QUE EL ACTOR OLVIDE SU CONTRASE&#209;A, PUEDE CAMBIARLA 
+      AUTONOMAMENTE DESDE LA OPCI&#211;N OLVID&#201; MI CONTRASE&#209;A DESDE LOGIN.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_DwzjcjmFYEDM_Q_r.html" class="ItemLink">CONSULTAR HISTORIAL : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p class="MsoNormal" style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      PERMITE AL ADMINISTRADOR DE INVENTARIO Y AL EMPRESARIO VISUALIZAR EL 
+      HISTORIAL DE MODIFICACIONES REALIZADAS EN EL SISTEMA, INCLUYENDO 
+      ACCIONES COMO ENTRADAS Y SALIDAS DE PRODUCTOS, JUNTO CON INFORMACI&#211;N 
+      DETALLADA DE CADA EVENTO (USUARIO, FECHA, HORA Y CAMBIOS REALIZADOS).<o p="#DEFAULT"></o>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_AoRcDTmFYEDcUQ3V.html" class="ItemLink">CREAR REMISION : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL EMPLEADO CREA UNA LISTA EN LA PLATAFORMA CON LOS ART&#205;CULOS FALTANTES 
+      EN LA TIENDA, PARA QUE LE LLEGUE AL ADMIN. DE INVENTARIO O AL EMPLEADO 
+      DE OTRA TIENDA, Y &#201;STE PUEDA PREPARAR LA MERCANC&#205;A PARA LA TIENDA 
+      SOLICITANTE.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_QyxcDTmFYEDcUQ3n.html" class="ItemLink">CONSULTAR HISTORIAL DE REMISIONES : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      TODOS LOS USUARIOS VAN A VER LAS LISTAS GESTIONADAS O PENDIENTES CON LOS 
+      ART&#205;CULOS ENTREGADOS O RECHAZADOS POR NOVEDADES EN EL INVENTARIO DE 
+      ACUERDO A SI FUE SOLICITADA AL ADMINISTRADOR DE INVENTARIO O A UN 
+      EMPLEADO DE OTRA TIENDA.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_pRNjmzmFYEDKAhCl.html" class="ItemLink">DESCRIPCION DE INGRESO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL EMPRESARIO &#211; EL ADMINISTRADOR DE INVENTARIO PUEDEN A&#209;ADIR A UN 
+      PRODUCTO EN PROCESO DE INGRESO, UNA DESCRIPCION PARA INDICAR EL ESTADO 
+      DE ESTE O LO OCURRIDO CON ESTE U CUALQUIER OTRA OBSERVACION
+    </p>
+    &nbsp;
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_VVLrmzmFYEDKAhEF.html" class="ItemLink">CARGAR RESPALDO DE ENTRADA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      PUEDE CARGAR LA IMAGEN O PDF DE LA FACTURA DE PROVEEDOR BRINDADA AL 
+      ADMINISTRADOR DE INVENTARIO AL CREAR UN INGRESO DE PRODUCTOS
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_CNEsHzmFYEDOLw6O.html" class="ItemLink">SALIDA DE PRODUCTOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL ADMINISTRADOR DE INVENTARIO Y EMPRESARIO, PUEDEN REGISTRAR LA SALIDA 
+      DE PRODUCTOS, LLENANDO LOS CAMPOS SOLICITADOS Y SUBIENDO UNA EVIDENCIA 
+      VALIDA COMO EL EXCEL DEL TOTAL DE VENTAS QUE LE COMPARTIERON A &#201;L: LOS 
+      EMPLEADOS DE CADA TIENDA, EL SISTEMA LE PERMITE SUBIR ESTE ARCHIVO, LEE 
+      LOS PRODUCTOS Y CANTIDAD DE CADA UNO, UNA VEZ LOS LEE, EL SISTEMA LE 
+      MUESTRA LOS PRODUCTOS A REGISTRAR LA SALIDA; POSTERIOR A ESTO EL USUARIO 
+      VALIDA QUE SEA CORRECTO EL ANALISIS O LO CORRIGE MANUALMENTE Y GUARDA EL 
+      REGISTRO.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_sggXfzmGAqAoiBul.html" class="ItemLink">CARGAR Y PROCESAR RESPALDO DE SALIDA0 : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      POR MEDIO DE ESTA OPCION QUE SE ENCUENTRA DENTRO DEL FORMULARIO / 
+      VENTANA DE &quot;REGISTRO DE SALIDA&quot; CON DEMAS OPCIONES DE ENTRADA DE DATOS, 
+      EL ADMINISTRADOR DE INVENTARIO O EMPRESARIO, CARGA EL EXCEL COMPARTIDO 
+      POR EMPLEADO SEGUN TIENDA ASIGNADA, SIENDO LA EVIDENCIA DE RESPALDO PARA 
+      EDITAR Y DESCONTAR PRODUCTOS EN INVENTARIO
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_dHKXfzmGAqAoiBvZ.html" class="ItemLink">DESCRIPCION DE SALIDA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL APARTADO DE DESCRIPCION DE SALIDA ES OBLIGATORIA SOLO SI SELECCIONA 
+      UN MOTIVO DE SALIDA DE INVENTARIO COMO (Da&#241;o, Consumo interno, 
+      Vencimiento), PARA OTROS MOTIVOS DIFERENTES ES OPCIONAL Y ESTE APARTADO, 
+      PARA INGRESAR UNA DESCRIPCION APARACE AL CASI FINALIZAR EL PROCESO DE 
+      REGISTRO DE SALIDA DE INVENTARIO
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_GfSSEbmGAqAoiBw6.html" class="ItemLink">SUBIR Y DESCARGAR EVIDENCIA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-left:0;color:#000000;font-weight:normal;margin-right:0;font-size:12px;font-family:Dialog;">
+    <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;">
+      EL EMPRESARIO POR MEDIO DE ESTA OPCI&#211;N PUEDE SUBIR CONFIDENCIALMENTE EL 
+      ARCHIVO TIPO EXCEL (QUE ES EL DESCARGADO DE SU SISTEMA DE VENTAS CON LOS 
+      PRODUCTOS VENDIDOS DEL DIA POR TIENDA) PARA QUE EL ADMIN DE INVENTARIO 
+      QUIEN REGISTRARA USUALMENTE LA SALIDA DE LOS &nbsp;PRODUCTOS, PUEDA DESCARGAR 
+      ESTE ARCHIVO, PERO EL SISTEMA PROCESARA SOLO LAS COLUMNAS REQUERIDAS 
+      COMO: PRODUCTO, PRESENTACION, MARCA Y CANTIDAD, (PARA MANTENER 
+      PRIVACIDAD EN CUANTO A GANANCIAS U PRECIOS TOTALES).
+    </p>
+  </body></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		DATASTOCK	</div>
+</body>
+</html>
