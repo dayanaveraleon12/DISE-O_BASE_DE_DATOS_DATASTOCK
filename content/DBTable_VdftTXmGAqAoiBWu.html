@@ -54,7 +54,7 @@ DATA		</span>
 	<p>
 	</p>
 	<p class="PageTitle">
-Entity - rol<a onclick="javascript: showVpLink('DATA.vpp://modelelement/TdUzpnmFYEDK4RlT', 'rol\nDATA.vpp://modelelement/TdUzpnmFYEDK4RlT', 'rol', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+Entity - motivo_salida<a onclick="javascript: showVpLink('DATA.vpp://modelelement/VdftTXmGAqAoiBWu', 'motivo_salida\nDATA.vpp://modelelement/VdftTXmGAqAoiBWu', 'motivo_salida', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
 	<p>
 	</p>
 	<table border="0" cellpadding="0" width="100%" cellspacing="0">
@@ -193,12 +193,12 @@ Columns Summary			</td>
 			</td>
 			<td class="TableContent">
 				<span class="TableContent">
-<a href="DBTable_TdUzpnmFYEDK4RlT.html#UdMzpnmFYEDK4Rlg" class="ItemLink">id</a>				</span>
+<a href="DBTable_VdftTXmGAqAoiBWu.html#c1wdTXmGAqAoiBWy" class="ItemLink">id</a>				</span>
 			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">int(255)</span>			</td>
+<span class="TableContent">int(11)</span>			</td>
 			<td>
 			</td>
 			<td class="TableContent">
@@ -215,7 +215,7 @@ No			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      PK Identificacion de rol
+      PK Identificacion del motivo de salida del producto
     </p>
   </body>			</td>
 		</tr>
@@ -224,12 +224,12 @@ No			</td>
 			</td>
 			<td class="TableContent">
 				<span class="TableContent">
-<a href="DBTable_TdUzpnmFYEDK4RlT.html#aDazpnmFYEDK4Rlj" class="ItemLink">nombre</a>				</span>
+<a href="DBTable_VdftTXmGAqAoiBWu.html#rqIdTXmGAqAoiBW1" class="ItemLink">tipo_motivo</a>				</span>
 			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">varchar(50)</span>			</td>
+<span class="TableContent">varchar(150)</span>			</td>
 			<td>
 			</td>
 			<td class="TableContent">
@@ -246,7 +246,8 @@ No			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      Nombre del rol
+      Se especifica cual es el motivo de salida del producto. Si es por: 
+      danio, consumo en la empresa, robo, fecha de vencimiento, etc
     </p>
   </body>			</td>
 		</tr>
@@ -309,7 +310,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_TdUzpnmFYEDK4RlT.html#BLV_pnmFYEDK4RvT" class="ItemLink">fk_rol_autorizacion : Relationship</a>				</span>
+&nbsp;<a href="DBTable_VdftTXmGAqAoiBWu.html#RiedTXmGAqAoiBXu" class="ItemLink">fk_motivo_salida__salida : Relationship</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -317,7 +318,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_TdUzpnmFYEDK4RlT.html" class="ItemLink">rol : Entity</a>				</span>
+&nbsp;<a href="DBTable_VdftTXmGAqAoiBWu.html" class="ItemLink">motivo_salida : Entity</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -325,7 +326,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_HQRPpnmFYEDK4RtA.html" class="ItemLink">autorizacion : Entity</a>				</span>
+&nbsp;<a href="DBTable_KwDqTXmGAqAABQ3T.html" class="ItemLink">salida : Entity</a>				</span>
 			</td>
 		</tr>
 	</table>
@@ -353,7 +354,7 @@ Columns Detail			</td>
 			</td>
 		</tr>
 	</table>
-<a name="UdMzpnmFYEDK4Rlg"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="c1wdTXmGAqAoiBWy"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -399,7 +400,7 @@ Columns Detail			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      PK Identificacion de rol
+      PK Identificacion del motivo de salida del producto
     </p>
   </body></span>			</td>
 		</tr>
@@ -461,7 +462,7 @@ Columns Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">255</span>			</td>
+<span class="TableContent">11</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -526,7 +527,7 @@ Columns Detail			</td>
 	</table>
 	<p>
 	</p>
-<a name="aDazpnmFYEDK4Rlj"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="rqIdTXmGAqAoiBW1"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -557,7 +558,7 @@ Columns Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">nombre</span>			</td>
+<span class="TableContent">tipo_motivo</span>			</td>
 		</tr>
 		<tr class="TableRow2">
 			<td>
@@ -572,7 +573,8 @@ Columns Detail			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      Nombre del rol
+      Se especifica cual es el motivo de salida del producto. Si es por: 
+      danio, consumo en la empresa, robo, fecha de vencimiento, etc
     </p>
   </body></span>			</td>
 		</tr>
@@ -634,7 +636,7 @@ Columns Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">50</span>			</td>
+<span class="TableContent">150</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -701,7 +703,7 @@ Relationships Detail			</td>
 			</td>
 		</tr>
 	</table>
-<a name="BLV_pnmFYEDK4RvT"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="RiedTXmGAqAoiBXu"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -732,7 +734,7 @@ Relationships Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">fk_rol_autorizacion</span>			</td>
+<span class="TableContent">fk_motivo_salida__salida</span>			</td>
 		</tr>
 		<tr class="TableRow2">
 			<td>
@@ -747,7 +749,7 @@ Relationships Detail			</td>
 						<td class="TableCellSpaceHolder10Px">
 						</td>
 						<td>
-<span class="TableHeaderText">autorizacion</span>						</td>
+<span class="TableHeaderText">salida</span>						</td>
 					</tr>
 					<tr>
 						<td colSpan="2" class="TableHeaderLine2">
@@ -760,7 +762,7 @@ Relationships Detail			</td>
 							<span class="TableContent">
 								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
 								</div>
-&nbsp;<a href="DBTable_HQRPpnmFYEDK4RtA.html#FLV_pnmFYEDK4RvW" class="ItemLink">id_rol : Column</a>							</span>
+&nbsp;<a href="DBTable_KwDqTXmGAqAABQ3T.html#BredTXmGAqAoiBXy" class="ItemLink">id_motivo_salida : Column</a>							</span>
 						</td>
 					</tr>
 				</table>
@@ -779,7 +781,7 @@ Relationships Detail			</td>
 						<td class="TableCellSpaceHolder10Px">
 						</td>
 						<td>
-<span class="TableHeaderText">rol</span>						</td>
+<span class="TableHeaderText">motivo_salida</span>						</td>
 					</tr>
 					<tr>
 						<td colSpan="2" class="TableHeaderLine2">
@@ -792,7 +794,7 @@ Relationships Detail			</td>
 							<span class="TableContent">
 								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
 								</div>
-&nbsp;<a href="DBTable_TdUzpnmFYEDK4RlT.html#UdMzpnmFYEDK4Rlg" class="ItemLink">id : Column</a>							</span>
+&nbsp;<a href="DBTable_VdftTXmGAqAoiBWu.html#c1wdTXmGAqAoiBWy" class="ItemLink">id : Column</a>							</span>
 						</td>
 					</tr>
 				</table>

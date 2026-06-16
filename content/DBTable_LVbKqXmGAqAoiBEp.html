@@ -193,16 +193,16 @@ Columns Summary			</td>
 			</td>
 			<td class="TableContent">
 				<span class="TableContent">
-<a href="DBTable_LVbKqXmGAqAoiBEp.html#R1bKqXmGAqAoiBEr" class="ItemLink">id_cuenta</a>				</span>
+<a href="DBTable_LVbKqXmGAqAoiBEp.html#0dbmTXmGAqAABTJ2" class="ItemLink">id</a>				</span>
 			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">int(255)</span>			</td>
+<span class="TableContent">int(11)</span>			</td>
 			<td>
 			</td>
 			<td class="TableContent">
-PK / FK			</td>
+PK			</td>
 			<td>
 			</td>
 			<td class="TableContent">
@@ -213,13 +213,44 @@ No			</td>
 <head>
     
   </head>
-  <body style="margin-left:0;color:#000000;font-weight:normal;font-size:12px;margin-right:0;font-family:Dialog;">
-    <p style="margin-left:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-right:0pt;">
-      FK IDENTIFICABLE Identificacion de la cuenta
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      PK Identificacion del la cuenta del sitio
     </p>
   </body>			</td>
 		</tr>
 		<tr class="TableRow2">
+			<td>
+			</td>
+			<td class="TableContent">
+				<span class="TableContent">
+<a href="DBTable_LVbKqXmGAqAoiBEp.html#R1bKqXmGAqAoiBEr" class="ItemLink">id_cuenta</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">int(255)</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+FK			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+No			</td>
+			<td>
+			</td>
+			<td class="TableContent Documentation">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      FK Identificacion de la cuenta
+    </p>
+  </body>			</td>
+		</tr>
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td class="TableContent">
@@ -233,7 +264,7 @@ No			</td>
 			<td>
 			</td>
 			<td class="TableContent">
-PK / FK			</td>
+FK			</td>
 			<td>
 			</td>
 			<td class="TableContent">
@@ -244,9 +275,9 @@ No			</td>
 <head>
     
   </head>
-  <body style="margin-left:0;color:#000000;font-weight:normal;font-size:12px;margin-right:0;font-family:Dialog;">
-    <p style="margin-left:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-right:0pt;">
-      FK IDENTIFICABLE Identificacion del sitio
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      FK Identificacion del sitio
     </p>
   </body>			</td>
 		</tr>
@@ -309,6 +340,84 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html#j45mTXmGAqAABS7_" class="ItemLink">fk_cuenta_sitio__traslado : Relationship</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html" class="ItemLink">cuenta_sitio : Entity</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable_JVFqTXmGAqAABQ2z.html" class="ItemLink">traslado : Entity</a>				</span>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html#NF.tTXmGAqAoiBWO" class="ItemLink">fk_cuenta_sitio__salida : Relationship</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html" class="ItemLink">cuenta_sitio : Entity</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable_KwDqTXmGAqAABQ3T.html" class="ItemLink">salida : Entity</a>				</span>
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html#ap5ZzXmGAqAABWBM" class="ItemLink">fk_cuenta_sitio__codigo : Relationship</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html" class="ItemLink">cuenta_sitio : Entity</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+&nbsp;<a href="DBTable__BDSzXmGAqAABTKG.html" class="ItemLink">codigo : Entity</a>				</span>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
 &nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html#mVbKqXmGAqAoiBEk" class="ItemLink">fk_cuenta__sitio : Relationship</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
@@ -328,7 +437,7 @@ Relationships Summary			</td>
 &nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html" class="ItemLink">cuenta_sitio : Entity</a>				</span>
 			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td class="TableCellSpaceHolder10Px">
 			</td>
 			<td>
@@ -379,6 +488,179 @@ Columns Detail			</td>
 			</td>
 		</tr>
 	</table>
+<a name="0dbmTXmGAqAABTJ2"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">id</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      PK Identificacion del la cuenta del sitio
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">int</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Nullable</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Index</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Length</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">11</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scale</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Id Generator</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">native</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Generated</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Attribute</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
 <a name="R1bKqXmGAqAoiBEr"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
@@ -423,9 +705,9 @@ Columns Detail			</td>
 <span class="TableContent Documentation"><head>
     
   </head>
-  <body style="margin-left:0;color:#000000;font-weight:normal;font-size:12px;margin-right:0;font-family:Dialog;">
-    <p style="margin-left:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-right:0pt;">
-      FK IDENTIFICABLE Identificacion de la cuenta
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      FK Identificacion de la cuenta
     </p>
   </body></span>			</td>
 		</tr>
@@ -467,7 +749,7 @@ Columns Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">true</span>			</td>
+<span class="TableContent">false</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -586,9 +868,9 @@ Columns Detail			</td>
 <span class="TableContent Documentation"><head>
     
   </head>
-  <body style="margin-left:0;color:#000000;font-weight:normal;font-size:12px;margin-right:0;font-family:Dialog;">
-    <p style="margin-left:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-right:0pt;">
-      FK IDENTIFICABLE Identificacion del sitio
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      FK Identificacion del sitio
     </p>
   </body></span>			</td>
 		</tr>
@@ -630,7 +912,7 @@ Columns Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">true</span>			</td>
+<span class="TableContent">false</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -717,6 +999,474 @@ Relationships Detail			</td>
 			</td>
 		</tr>
 	</table>
+<a name="j45mTXmGAqAABS7_"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">fk_cuenta_sitio__traslado</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">traslado</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable_JVFqTXmGAqAABQ2z.html#GcohTXmGAqAoiBLb" class="ItemLink">id_cuenta_sitio : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">cuenta_sitio</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html#0dbmTXmGAqAABTJ2" class="ItemLink">id : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">To Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0..*</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">From Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">1</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Association</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Data Model</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Physical</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="NF.tTXmGAqAoiBWO"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">fk_cuenta_sitio__salida</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">salida</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable_KwDqTXmGAqAABQ3T.html#dUBtTXmGAqAoiBWS" class="ItemLink">id_cuenta_sitio : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">cuenta_sitio</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html#0dbmTXmGAqAABTJ2" class="ItemLink">id : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">To Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0..*</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">From Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">1</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Association</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Data Model</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Physical</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="ap5ZzXmGAqAABWBM"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">fk_cuenta_sitio__codigo</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">codigo</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable__BDSzXmGAqAABTKG.html#RgFZzXmGAqAABWBQ" class="ItemLink">id_cuenta_sitio : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">cuenta_sitio</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable_LVbKqXmGAqAoiBEp.html#0dbmTXmGAqAABTJ2" class="ItemLink">id : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">To Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0..*</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">From Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">1</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Association</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Data Model</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Physical</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
 <a name="mVbKqXmGAqAoiBEk"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">

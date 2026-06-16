@@ -54,7 +54,7 @@ DATA		</span>
 	<p>
 	</p>
 	<p class="PageTitle">
-Entity - traslado_producto_sitio_lote<a onclick="javascript: showVpLink('DATA.vpp://modelelement/VBy4UXmFYEDcwj38', 'traslado_producto_sitio_lote\nDATA.vpp://modelelement/VBy4UXmFYEDcwj38', 'traslado_producto_sitio_lote', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+Entity - evidencia_salida<a onclick="javascript: showVpLink('DATA.vpp://modelelement/n.fqTXmGAqAABQ3x', 'evidencia_salida\nDATA.vpp://modelelement/n.fqTXmGAqAABQ3x', 'evidencia_salida', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
 	<p>
 	</p>
 	<table border="0" cellpadding="0" width="100%" cellspacing="0">
@@ -193,7 +193,7 @@ Columns Summary			</td>
 			</td>
 			<td class="TableContent">
 				<span class="TableContent">
-<a href="DBTable_VBy4UXmFYEDcwj38.html#t4pOdXmFYEDcmREB" class="ItemLink">id</a>				</span>
+<a href="DBTable_n_fqTXmGAqAABQ3x.html#F3ydTXmGAqAoiBXP" class="ItemLink">id</a>				</span>
 			</td>
 			<td>
 			</td>
@@ -215,8 +215,8 @@ No			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      PK Identificacion del traslado de un producto que se encuentra en un 
-      sitio y esta asignado a un lote
+      PK Identificacion de la evidencia de salida del producto, el cual es un 
+      archivo Excel
     </p>
   </body>			</td>
 		</tr>
@@ -225,38 +225,7 @@ No			</td>
 			</td>
 			<td class="TableContent">
 				<span class="TableContent">
-<a href="DBTable_VBy4UXmFYEDcwj38.html#dz4hTXmGAqAoiBLo" class="ItemLink">id_traslado</a>				</span>
-			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">int(11)</span>			</td>
-			<td>
-			</td>
-			<td class="TableContent">
-FK			</td>
-			<td>
-			</td>
-			<td class="TableContent">
-No			</td>
-			<td>
-			</td>
-			<td class="TableContent Documentation">
-<head>
-    
-  </head>
-  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
-    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      FK Identificacion de traslado
-    </p>
-  </body>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td class="TableContent">
-				<span class="TableContent">
-<a href="DBTable_VBy4UXmFYEDcwj38.html#ERy4UXmFYEDcwj4E" class="ItemLink">id_producto_sitio</a>				</span>
+<a href="DBTable_n_fqTXmGAqAABQ3x.html#L_LFTXmGAqAoiBU5" class="ItemLink">id_cuenta</a>				</span>
 			</td>
 			<td>
 			</td>
@@ -278,7 +247,41 @@ No			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      FK Identificacion donde se ubica el producto en un sitio
+      FK cuenta, porque solo las cuentas que fueron asignadas con rol de 
+      Empresario podran subir el archivo excel para la evidencia de salida de 
+      productos
+    </p>
+  </body>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td class="TableContent">
+				<span class="TableContent">
+<a href="DBTable_n_fqTXmGAqAABQ3x.html#gM0aTXmGAqAABQ4_" class="ItemLink">archivo_excel</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">varchar(255)</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+No			</td>
+			<td>
+			</td>
+			<td class="TableContent Documentation">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Archivo tipo excel (tipo varchar porque se guarda la URL local donde se 
+      encuentra)
     </p>
   </body>			</td>
 		</tr>
@@ -287,7 +290,69 @@ No			</td>
 			</td>
 			<td class="TableContent">
 				<span class="TableContent">
-<a href="DBTable_VBy4UXmFYEDcwj38.html#bOyKTXmGAqAABQzV" class="ItemLink">id_lote</a>				</span>
+<a href="DBTable_n_fqTXmGAqAABQ3x.html#u9MaTXmGAqAABQ5y" class="ItemLink">nombre_excel</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">varchar(255)</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+No			</td>
+			<td>
+			</td>
+			<td class="TableContent Documentation">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Se asigna un nombre al archivo Excel
+    </p>
+  </body>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td class="TableContent">
+				<span class="TableContent">
+<a href="DBTable_n_fqTXmGAqAABQ3x.html#_Y8lTXmGAqAoiBVa" class="ItemLink">fecha_carga</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">date</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+No			</td>
+			<td>
+			</td>
+			<td class="TableContent Documentation">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Se almacena la fecha en la que se esta subiendo el archivo excel
+    </p>
+  </body>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td class="TableContent">
+				<span class="TableContent">
+<a href="DBTable_n_fqTXmGAqAABQ3x.html#4.PNTXmGAqAoiBVu" class="ItemLink">id_sitio_descarga</a>				</span>
 			</td>
 			<td>
 			</td>
@@ -309,38 +374,9 @@ No			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      FK Identificacion del lote
-    </p>
-  </body>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td class="TableContent">
-				<span class="TableContent">
-<a href="DBTable_VBy4UXmFYEDcwj38.html#BgW4UXmFYEDcwj4Q" class="ItemLink">cantidad_traslado</a>				</span>
-			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">int(255)</span>			</td>
-			<td>
-			</td>
-			<td class="TableContent">
-			</td>
-			<td>
-			</td>
-			<td class="TableContent">
-No			</td>
-			<td>
-			</td>
-			<td class="TableContent Documentation">
-<head>
-    
-  </head>
-  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
-    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      Cantidad de productos para trasladar de un sitio.
+      Se indica o asigna el usuario que tenga un sitio especifico 
+      (Administrador de inventario) quien podra descargar el archivo excel a 
+      subir.
     </p>
   </body>			</td>
 		</tr>
@@ -403,7 +439,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html#MBy4UXmFYEDcwj33" class="ItemLink">fk_traslado__traslado_producto_sitio : Relationship</a>				</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html#e06IzXmGAqAABR4X" class="ItemLink">fk_evidencia_salida__salida : Relationship</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -411,7 +447,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_JVFqTXmGAqAABQ2z.html" class="ItemLink">traslado : Entity</a>				</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html" class="ItemLink">evidencia_salida : Entity</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -419,7 +455,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html" class="ItemLink">traslado_producto_sitio_lote : Entity</a>				</span>
+&nbsp;<a href="DBTable_KwDqTXmGAqAABQ3T.html" class="ItemLink">salida : Entity</a>				</span>
 			</td>
 		</tr>
 		<tr class="TableRow2">
@@ -429,7 +465,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html#thy4UXmFYEDcwj4B" class="ItemLink">fk_producto_sitio__traslado_producto_sitio : Relationship</a>				</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html#I4LFTXmGAqAoiBU1" class="ItemLink">fk_cuenta__evidencia_salida : Relationship</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -437,7 +473,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_iE6zDnmFYEDc3icF.html" class="ItemLink">producto_sitio : Entity</a>				</span>
+&nbsp;<a href="DBTable_0_NzpnmFYEDK4RmL.html" class="ItemLink">cuenta : Entity</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -445,7 +481,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html" class="ItemLink">traslado_producto_sitio_lote : Entity</a>				</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html" class="ItemLink">evidencia_salida : Entity</a>				</span>
 			</td>
 		</tr>
 		<tr class="TableRow1">
@@ -455,7 +491,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/OneToManyRelationship.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/OneToManyRelationship.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html#VOyKTXmGAqAABQzS" class="ItemLink">fk_lote__traslado_producto_sitio_lote : Relationship</a>				</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html#E13NTXmGAqAoiBVq" class="ItemLink">fk_sitio__evidencia_salida : Relationship</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -463,7 +499,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_LS6iZnmFYEDK4R6e.html" class="ItemLink">lote : Entity</a>				</span>
+&nbsp;<a href="DBTable_jK26ZnmFYEDK4R_3.html" class="ItemLink">sitio : Entity</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
@@ -471,7 +507,7 @@ Relationships Summary			</td>
 				<span class="TableContent">
 					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Entity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Entity.png'); background-repeat: no-repeat; background-size: contain;">
 					</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html" class="ItemLink">traslado_producto_sitio_lote : Entity</a>				</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html" class="ItemLink">evidencia_salida : Entity</a>				</span>
 			</td>
 		</tr>
 	</table>
@@ -499,7 +535,7 @@ Columns Detail			</td>
 			</td>
 		</tr>
 	</table>
-<a name="t4pOdXmFYEDcmREB"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="F3ydTXmGAqAoiBXP"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -545,8 +581,8 @@ Columns Detail			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      PK Identificacion del traslado de un producto que se encuentra en un 
-      sitio y esta asignado a un lote
+      PK Identificacion de la evidencia de salida del producto, el cual es un 
+      archivo Excel
     </p>
   </body></span>			</td>
 		</tr>
@@ -673,7 +709,7 @@ Columns Detail			</td>
 	</table>
 	<p>
 	</p>
-<a name="dz4hTXmGAqAoiBLo"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="L_LFTXmGAqAoiBU5"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -704,7 +740,7 @@ Columns Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">id_traslado</span>			</td>
+<span class="TableContent">id_cuenta</span>			</td>
 		</tr>
 		<tr class="TableRow2">
 			<td>
@@ -719,170 +755,9 @@ Columns Detail			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      FK Identificacion de traslado
-    </p>
-  </body></span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Type</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">int</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Nullable</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Unique</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Primary Key</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Index</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Length</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">11</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Scale</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">0</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Foreign Key</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Generated</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Unspecified</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sync To Attribute</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Yes</span>			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td class="TableCellSpaceHolder1PxTall">
-			</td>
-		</tr>
-		<tr>
-			<td class="TableFooter">
-			</td>
-		</tr>
-	</table>
-	<p>
-	</p>
-<a name="ERy4UXmFYEDcwj4E"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td colSpan="4" class="TableHeaderLine">
-			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine1">
-			</td>
-		</tr>
-		<tr class="TableHeader">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td width="25%">
-<span class="TableHeaderText">Name</span>			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-<span class="TableHeaderText">Value</span>			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine2">
-			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Name</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">id_producto_sitio</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Description</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent Documentation"><head>
-    
-  </head>
-  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
-    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      FK Identificacion donde se ubica el producto en un sitio
+      FK cuenta, porque solo las cuentas que fueron asignadas con rol de 
+      Empresario podran subir el archivo excel para la evidencia de salida de 
+      productos
     </p>
   </body></span>			</td>
 		</tr>
@@ -999,7 +874,7 @@ Columns Detail			</td>
 	</table>
 	<p>
 	</p>
-<a name="bOyKTXmGAqAABQzV"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="gM0aTXmGAqAABQ4_"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -1030,7 +905,7 @@ Columns Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">id_lote</span>			</td>
+<span class="TableContent">archivo_excel</span>			</td>
 		</tr>
 		<tr class="TableRow2">
 			<td>
@@ -1045,7 +920,499 @@ Columns Detail			</td>
   </head>
   <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
     <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      FK Identificacion del lote
+      Archivo tipo excel (tipo varchar porque se guarda la URL local donde se 
+      encuentra)
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">varchar</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Nullable</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Index</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Length</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">255</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scale</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Generated</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Attribute</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="u9MaTXmGAqAABQ5y"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">nombre_excel</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Se asigna un nombre al archivo Excel
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">varchar</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Nullable</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Index</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Length</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">255</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scale</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Generated</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Attribute</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="_Y8lTXmGAqAoiBVa"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">fecha_carga</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Se almacena la fecha en la que se esta subiendo el archivo excel
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">date</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Nullable</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Index</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Length</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scale</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Generated</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Attribute</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="4.PNTXmGAqAoiBVu"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">id_sitio_descarga</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Se indica o asigna el usuario que tenga un sitio especifico 
+      (Administrador de inventario) quien podra descargar el archivo excel a 
+      subir.
     </p>
   </body></span>			</td>
 		</tr>
@@ -1128,169 +1495,6 @@ Columns Detail			</td>
 			</td>
 			<td>
 <span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Generated</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Unspecified</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sync To Attribute</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Yes</span>			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td class="TableCellSpaceHolder1PxTall">
-			</td>
-		</tr>
-		<tr>
-			<td class="TableFooter">
-			</td>
-		</tr>
-	</table>
-	<p>
-	</p>
-<a name="BgW4UXmFYEDcwj4Q"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td colSpan="4" class="TableHeaderLine">
-			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine1">
-			</td>
-		</tr>
-		<tr class="TableHeader">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td width="25%">
-<span class="TableHeaderText">Name</span>			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-<span class="TableHeaderText">Value</span>			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine2">
-			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Name</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">cantidad_traslado</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Description</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent Documentation"><head>
-    
-  </head>
-  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
-    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
-      Cantidad de productos para trasladar de un sitio.
-    </p>
-  </body></span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Type</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">int</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Nullable</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Unique</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Primary Key</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Index</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Length</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">255</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Scale</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">0</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Foreign Key</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -1337,7 +1541,7 @@ Relationships Detail			</td>
 			</td>
 		</tr>
 	</table>
-<a name="MBy4UXmFYEDcwj33"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="e06IzXmGAqAABR4X"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -1368,7 +1572,7 @@ Relationships Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">fk_traslado__traslado_producto_sitio</span>			</td>
+<span class="TableContent">fk_evidencia_salida__salida</span>			</td>
 		</tr>
 		<tr class="TableRow2">
 			<td>
@@ -1383,7 +1587,7 @@ Relationships Detail			</td>
 						<td class="TableCellSpaceHolder10Px">
 						</td>
 						<td>
-<span class="TableHeaderText">traslado_producto_sitio_lote</span>						</td>
+<span class="TableHeaderText">salida</span>						</td>
 					</tr>
 					<tr>
 						<td colSpan="2" class="TableHeaderLine2">
@@ -1396,7 +1600,7 @@ Relationships Detail			</td>
 							<span class="TableContent">
 								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
 								</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html#dz4hTXmGAqAoiBLo" class="ItemLink">id_traslado : Column</a>							</span>
+&nbsp;<a href="DBTable_KwDqTXmGAqAABQ3T.html#cZ6IzXmGAqAABR4b" class="ItemLink">id_evidencia_salida : Column</a>							</span>
 						</td>
 					</tr>
 				</table>
@@ -1415,7 +1619,7 @@ Relationships Detail			</td>
 						<td class="TableCellSpaceHolder10Px">
 						</td>
 						<td>
-<span class="TableHeaderText">traslado</span>						</td>
+<span class="TableHeaderText">evidencia_salida</span>						</td>
 					</tr>
 					<tr>
 						<td colSpan="2" class="TableHeaderLine2">
@@ -1428,7 +1632,163 @@ Relationships Detail			</td>
 							<span class="TableContent">
 								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
 								</div>
-&nbsp;<a href="DBTable_JVFqTXmGAqAABQ2z.html#mXYhTXmGAqAoiBLi" class="ItemLink">id : Column</a>							</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html#F3ydTXmGAqAoiBXP" class="ItemLink">id : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">To Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">1</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">From Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">1</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sync To Association</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Yes</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Data Model</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Physical</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="I4LFTXmGAqAoiBU1"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">fk_cuenta__evidencia_salida</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Foreign Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">evidencia_salida</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html#L_LFTXmGAqAoiBU5" class="ItemLink">id_cuenta : Column</a>							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Primary Key</span>			</td>
+			<td>
+			</td>
+			<td>
+				<table border="0" cellpadding="0" width="100%" cellspacing="0">
+					<tr class="TableHeader">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+<span class="TableHeaderText">cuenta</span>						</td>
+					</tr>
+					<tr>
+						<td colSpan="2" class="TableHeaderLine2">
+						</td>
+					</tr>
+					<tr class="TableRow1">
+						<td class="TableCellSpaceHolder10Px">
+						</td>
+						<td>
+							<span class="TableContent">
+								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
+								</div>
+&nbsp;<a href="DBTable_0_NzpnmFYEDK4RmL.html#hrdzpnmFYEDK4RmV" class="ItemLink">id : Column</a>							</span>
 						</td>
 					</tr>
 				</table>
@@ -1493,7 +1853,7 @@ Relationships Detail			</td>
 	</table>
 	<p>
 	</p>
-<a name="thy4UXmFYEDcwj4B"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+<a name="E13NTXmGAqAoiBVq"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
 			</td>
@@ -1524,7 +1884,7 @@ Relationships Detail			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">fk_producto_sitio__traslado_producto_sitio</span>			</td>
+<span class="TableContent">fk_sitio__evidencia_salida</span>			</td>
 		</tr>
 		<tr class="TableRow2">
 			<td>
@@ -1539,7 +1899,7 @@ Relationships Detail			</td>
 						<td class="TableCellSpaceHolder10Px">
 						</td>
 						<td>
-<span class="TableHeaderText">traslado_producto_sitio_lote</span>						</td>
+<span class="TableHeaderText">evidencia_salida</span>						</td>
 					</tr>
 					<tr>
 						<td colSpan="2" class="TableHeaderLine2">
@@ -1552,7 +1912,7 @@ Relationships Detail			</td>
 							<span class="TableContent">
 								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
 								</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html#ERy4UXmFYEDcwj4E" class="ItemLink">id_producto_sitio : Column</a>							</span>
+&nbsp;<a href="DBTable_n_fqTXmGAqAABQ3x.html#4.PNTXmGAqAoiBVu" class="ItemLink">id_sitio_descarga : Column</a>							</span>
 						</td>
 					</tr>
 				</table>
@@ -1571,7 +1931,7 @@ Relationships Detail			</td>
 						<td class="TableCellSpaceHolder10Px">
 						</td>
 						<td>
-<span class="TableHeaderText">producto_sitio</span>						</td>
+<span class="TableHeaderText">sitio</span>						</td>
 					</tr>
 					<tr>
 						<td colSpan="2" class="TableHeaderLine2">
@@ -1584,163 +1944,7 @@ Relationships Detail			</td>
 							<span class="TableContent">
 								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
 								</div>
-&nbsp;<a href="DBTable_iE6zDnmFYEDc3icF.html#hLDzDnmFYEDc3idZ" class="ItemLink">id : Column</a>							</span>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">To Multiplicity</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">0..*</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">From Multiplicity</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">1</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sync To Association</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Yes</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Data Model</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Physical</span>			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td class="TableCellSpaceHolder1PxTall">
-			</td>
-		</tr>
-		<tr>
-			<td class="TableFooter">
-			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td style="height: 5px;">
-			</td>
-		</tr>
-	</table>
-	<p>
-	</p>
-<a name="VOyKTXmGAqAABQzS"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td colSpan="4" class="TableHeaderLine">
-			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine1">
-			</td>
-		</tr>
-		<tr class="TableHeader">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td width="25%">
-<span class="TableHeaderText">Name</span>			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-<span class="TableHeaderText">Value</span>			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine2">
-			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Name</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">fk_lote__traslado_producto_sitio_lote</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Foreign Key</span>			</td>
-			<td>
-			</td>
-			<td>
-				<table border="0" cellpadding="0" width="100%" cellspacing="0">
-					<tr class="TableHeader">
-						<td class="TableCellSpaceHolder10Px">
-						</td>
-						<td>
-<span class="TableHeaderText">traslado_producto_sitio_lote</span>						</td>
-					</tr>
-					<tr>
-						<td colSpan="2" class="TableHeaderLine2">
-						</td>
-					</tr>
-					<tr class="TableRow1">
-						<td class="TableCellSpaceHolder10Px">
-						</td>
-						<td>
-							<span class="TableContent">
-								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
-								</div>
-&nbsp;<a href="DBTable_VBy4UXmFYEDcwj38.html#bOyKTXmGAqAABQzV" class="ItemLink">id_lote : Column</a>							</span>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Primary Key</span>			</td>
-			<td>
-			</td>
-			<td>
-				<table border="0" cellpadding="0" width="100%" cellspacing="0">
-					<tr class="TableHeader">
-						<td class="TableCellSpaceHolder10Px">
-						</td>
-						<td>
-<span class="TableHeaderText">lote</span>						</td>
-					</tr>
-					<tr>
-						<td colSpan="2" class="TableHeaderLine2">
-						</td>
-					</tr>
-					<tr class="TableRow1">
-						<td class="TableCellSpaceHolder10Px">
-						</td>
-						<td>
-							<span class="TableContent">
-								<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Column.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Column.png'); background-repeat: no-repeat; background-size: contain;">
-								</div>
-&nbsp;<a href="DBTable_LS6iZnmFYEDK4R6e.html#TwmiZnmFYEDK4R6i" class="ItemLink">id : Column</a>							</span>
+&nbsp;<a href="DBTable_jK26ZnmFYEDK4R_3.html#_JO6ZnmFYEDK4R.7" class="ItemLink">id : Column</a>							</span>
 						</td>
 					</tr>
 				</table>
